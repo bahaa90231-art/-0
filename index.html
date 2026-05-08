@@ -88,6 +88,7 @@
             justify-content: center;
             gap: 1.2rem;
             margin: 2rem;
+            flex-wrap: wrap;
         }
 
         .nav-btn {
@@ -328,6 +329,32 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .turkish-text {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed rgba(243, 156, 18, 0.5);
+        }
+
+        .arabic-text {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(243, 156, 18, 0.3);
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .translation-title {
+            color: #f39c12;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .translation-title i {
+            font-size: 0.9rem;
+        }
+
         .modal-actions {
             display: flex;
             gap: 1.5rem;
@@ -422,23 +449,206 @@
 </div>
 
 <script>
+    // ========== المواضيع الأساسية (8 مواضيع مع ترجمة) ==========
     const mainTopics = [
-        { id: 1, title: "Manavda - محادثة في السوق", content: `Manavda \nMüşteri: Merhaba. Domatesin kilosu ne kadar? \nManav: Merhaba, hoş geldiniz. Domatesin kilosu 30 lira. \nMüşteri: Çok pahalıymış. Daha ucuzu var mı? \nManav: Evet, şu taraftakiler 25 lira. \nMüşteri: Tamam, bir kilo domates alayım. Muz ne kadar? \nManav: Muzun kilosu 40 lira. \nMüşteri: Yarım kilo muz ve bir kilo elma da alayım. \nManav: Başka bir şey ister misiniz? \nMüşteri: Salatalık taze mi? \nManav: Evet, bugün geldi. Çok taze. \nMüşteri: O zaman yarım kilo salatalık ekleyin lütfen. \nManav: Tabii. Hepsi 110 lira tuttu. \nMüşteri: Buyurun. Teşekkür ederim. \nManav: Ben teşekkür ederim. İyi günler!` },
-        { id: 2, title: "Restoranda Diyalog - محادثة في المطعم", content: `Restoranda Diyalog \nGarson: Hoş geldiniz efendim. Buyurun, ne alırsınız? \nMüşteri: Merhaba, menüyü alabilir miyim? \nGarson: Tabii efendim, buyurun. \nMüşteri: Bugün ne tavsiye edersiniz? \nGarson: Bugün ızgara tavuk ve mercimek çorbası tavsiye ederim. \nMüşteri: Tamam, bir mercimek çorbası ve bir porsiyon ızgara tavuk alayım. \nGarson: İçecek olarak ne alırsınız? \nMüşteri: Bir ayran lütfen. \nGarson: Başka bir şey ister misiniz? \nMüşteri: Hayır, teşekkür ederim. \nGarson: Siparişiniz birazdan hazır olacak. Afiyet olsun.` },
-        { id: 3, title: "Kış Mevsimi - فصل الشتاء", content: `Kış Mevsimi \nKış mevsimi yılın en soğuk mevsimidir. Aralık, Ocak ve Şubat aylarını kapsar. Bu mevsimde hava genellikle soğuk olur ve bazı yerlerde kar yağar. Günler kısalır, geceler uzar. \nKışın insanlar kalın kıyafetler giyerler; mont, atkı, bere ve eldiven kullanırlar. Çocuklar kar topu oynar ve kardan adam yaparlar. Bazı insanlar kayak yapmayı sever. \nKış mevsimi aynı zamanda sıcak içeceklerin mevsimidir. Çay, kahve ve sıcak çorba içmek insanı ısıtır. Evde aileyle birlikte vakit geçirmek kışın en güzel yanlarından biridir. \nBen kış mevsimini seviyorum çünkü kar manzarası çok güzel ve huzur vericidir.` },
-        { id: 4, title: "Hava Durumu - حالة الطقس", content: `Hava Durumu \nHava durumu, günlük hayatımızı doğrudan etkileyen önemli bir faktördür. İnsanlar dışarı çıkmadan önce genellikle hava durumunu kontrol ederler. Çünkü hava şartları; giyim tarzımızı, ulaşım planlarımızı ve hatta ruh halimizi bile etkileyebilir. \nÖrneğin, güneşli bir havada insanlar genellikle daha mutlu ve enerjik hissederler. Parklarda yürüyüş yapar, piknik düzenler ve açık havada vakit geçirmek isterler. Yağmurlu havalarda ise şemsiye kullanmak gerekir ve trafik yoğunluğu artabilir. \nSoğuk ve karlı günlerde ise insanlar kalın kıyafetler giyer ve evde kalmayı tercih edebilirler. \nTürkiye'de hava durumu bölgelere göre değişiklik gösterir. Karadeniz Bölgesi genellikle yağışlıdır, İç Anadolu Bölgesi'nde kışlar soğuk ve kar yağışlı geçer, Akdeniz Bölgesi'nde ise yazlar sıcak ve kuraktır. \nSonuç olarak, hava durumu insanların günlük planlarını yaparken dikkate aldığı önemli bir unsurdur.` },
-        { id: 5, title: "Benim Kişisel Özelliklerim ve Davranışlarım", content: `Benim Kişisel Özelliklerim ve Davranışlarım \nBen bir yapay zekâyım. İnsanlara yardımcı olmak için tasarlandım. En önemli özelliğim sabırlı ve saygılı olmamdır. Herkese karşı nazik bir dil kullanırım ve sorulara açık ve anlaşılır cevaplar vermeye çalışırım. \nBilgiye dayalı ve objektif olmaya önem veririm. Farklı konular hakkında bilgi sunabilir, açıklamalar yapabilir ve gerektiğinde örnekler verebilirim. Aynı zamanda tarafsız davranırım ve kimseyi yargılamam. \nSorumluluk sahibi bir yapay zekâ olarak güvenli ve doğru bilgiler paylaşmaya dikkat ederim. Kullanıcıların ihtiyaçlarını anlamaya çalışır ve onlara en uygun şekilde yardımcı olurum. \nDavranışlarım her zaman profesyonel ve yardım odaklıdır. Amacım, insanların öğrenmesine, sorunlarını çözmesine ve yeni bilgiler keşfetmesine destek olmaktır.` },
-        { id: 6, title: "Eczanede Diyaloğu - محادثة في الصيدلية", content: `Eczanede Diyaloğu \nHasta: Merhaba, iyi günler. \nEczacı: Merhaba, hoş geldiniz. Size nasıl yardımcı olabilirim? \nHasta: Başım ağrıyor ve ateşim var. Bunun için bir ilaç almak istiyorum. \nEczacı: Ne zamandır bu şikayetleriniz var? \nHasta: Dünden beri. \nEczacı: Alerjiniz var mı? \nHasta: Hayır, alerjim yok. \nEczacı: Size bir ağrı kesici ve ateş düşürücü vereyim. \nHasta: Nasıl kullanmalıyım? \nEczacı: Günde üç kez, yemeklerden sonra bir tablet alın. \nHasta: Teşekkür ederim. Ne kadar? \nEczacı: Bu ilacın fiyatı 150 lira. \nHasta: Tamam, teşekkürler. \nEczacı: Geçmiş olsun.` },
-        { id: 7, title: "Sağlıklı ve Sağlıksız Yiyecekler", content: `Yemekler sağlığımız üzerinde doğrudan etkiye sahiptir. Bu yüzden sağlıklı ve sağlıksız besinler arasındaki farkı bilmek çok önemlidir. \nSağlıklı Yiyecekler: Sebzeler (brokoli, ıspanak, havuç), Meyveler (elma, muz, portakal), Tam tahıllar, Baklagiller, Balık ve beyaz et, Kuruyemişler. \nSağlıksız Yiyecekler: Hamburger, patates kızartması, Gazlı içecekler, Aşırı şekerli tatlılar, Paketli gıdalar, Cips ve abur cubur. \nSonuç olarak, dengeli ve düzenli beslenmek sağlıklı bir yaşam için çok önemlidir.` },
-        { id: 8, title: "Sağlıklı Bir Yaşam İçin Ne Yapmalı?", content: `Sağlıklı Bir Yaşam İçin Ne Yapmalı? \nSağlıklı bir yaşam sürmek herkesin amacı olmalıdır. Bunun için öncelikle dengeli beslenmek çok önemlidir. Her gün yeterli miktarda sebze, meyve, protein ve su tüketmeliyiz. \nDüzenli egzersiz yapmak da sağlıklı bir yaşamın olmazsa olmazıdır. Yürüyüş, koşu, yüzme veya bisiklet gibi aktiviteler hem fiziksel hem de zihinsel sağlığı güçlendirir. \nUyku düzeni de çok önemlidir. Günde 7-8 saat uyumak, vücudun kendini yenilemesine yardımcı olur. \nAyrıca stres yönetimi de sağlıklı yaşamın bir parçasıdır. Sonuç olarak, dengeli beslenme, düzenli egzersiz, yeterli uyku ve stres yönetimi sağlıklı bir yaşam için temel adımlardır.` }
+        { 
+            id: 1, 
+            title: "Manavda - محادثة في السوق", 
+            turkish: `Manavda 
+Müşteri: Merhaba. Domatesin kilosu ne kadar? 
+Manav: Merhaba, hoş geldiniz. Domatesin kilosu 30 lira. 
+Müşteri: Çok pahalıymış. Daha ucuzu var mı? 
+Manav: Evet, şu taraftakiler 25 lira. 
+Müşteri: Tamam, bir kilo domates alayım. Muz ne kadar? 
+Manav: Muzun kilosu 40 lira. 
+Müşteri: Yarım kilo muz ve bir kilo elma da alayım. 
+Manav: Başka bir şey ister misiniz? 
+Müşteri: Salatalık taze mi? 
+Manav: Evet, bugün geldi. Çok taze. 
+Müşteri: O zaman yarım kilo salatalık ekleyin lütfen. 
+Manav: Tabii. Hepsi 110 lira tuttu. 
+Müşteri: Buyurun. Teşekkür ederim. 
+Manav: Ben teşekkür ederim. İyi günler!`,
+            arabic: `الزبون: مرحبا. كم سعر الكيلو من الطماطم؟
+البائع: مرحبا. أهلاً وسهلاً. كيلو الطماطم بـ 30 ليرة.
+الزبون: غالية جداً. هل يوجد أرخص منها؟
+البائع: نعم، تلك الموجودة هناك بـ 25 ليرة.
+الزبون: حسناً، سآخذ كيلو طماطم. بكم كيلو الموز؟
+البائع: كيلو الموز 40 ليرة.
+الزبون: سآخذ نصف كيلو موز وكيلو تفاح أيضاً.
+البائع: هل تريد شيئاً آخر؟
+الزبون: هل الخيار طازج؟
+البائع: نعم، وصل اليوم طازج جداً.
+الزبون: إذاً أضف نصف كيلو خيار من فضلك.
+البائع: بالتأكيد. الحساب كله 110 ليرات.
+الزبون: تفضل. شكراً لك.
+البائع: شكراً لك. طاب يومك!`
+        },
+        { 
+            id: 2, 
+            title: "Restoranda Diyalog - محادثة في المطعم", 
+            turkish: `Restoranda Diyalog 
+Garson: Hoş geldiniz efendim. Buyurun, ne alırsınız? 
+Müşteri: Merhaba, menüyü alabilir miyim? 
+Garson: Tabii efendim, buyurun. 
+Müşteri: Bugün ne tavsiye edersiniz? 
+Garson: Bugün ızgara tavuk ve mercimek çorbası tavsiye ederim. 
+Müşteri: Tamam, bir mercimek çorbası ve bir porsiyon ızgara tavuk alayım. 
+Garson: İçecek olarak ne alırsınız? 
+Müşteri: Bir ayran lütfen. 
+Garson: Başka bir şey ister misiniz? 
+Müşteri: Hayır, teşekkür ederim. 
+Garson: Siparişiniz birazdan hazır olacak. Afiyet olsun.`,
+            arabic: `النادل: أهلاً وسهلاً سيدي. تفضل، ماذا تطلب؟
+الزبون: مرحبا، هل يمكنني الحصول على قائمة الطعام؟
+النادل: بالطبع سيدي، تفضل.
+الزبون: بماذا تنصح اليوم؟
+النادل: أنصح اليوم بالدجاج المشوي وشوربة العدس.
+الزبون: حسناً، سآخذ شوربة عدس ووجبة واحدة من الدجاج المشوي.
+النادل: كمشروب، ماذا ستأخذ؟
+الزبون: عيران واحداً من فضلك.
+النادل: هل تريد شيئاً آخر؟
+الزبون: لا، شكراً لك.
+النادل: طلبك سيكون جاهزاً بعد قليل. بالصحة والعافية.`
+        },
+        { 
+            id: 3, 
+            title: "Kış Mevsimi - فصل الشتاء", 
+            turkish: `Kış Mevsimi 
+Kış mevsimi yılın en soğuk mevsimidir. Aralık, Ocak ve Şubat aylarını kapsar. Bu mevsimde hava genellikle soğuk olur ve bazı yerlerde kar yağar. Günler kısalır, geceler uzar. 
+Kışın insanlar kalın kıyafetler giyerler; mont, atkı, bere ve eldiven kullanırlar. Çocuklar kar topu oynar ve kardan adam yaparlar. Bazı insanlar kayak yapmayı sever. 
+Kış mevsimi aynı zamanda sıcak içeceklerin mevsimidir. Çay, kahve ve sıcak çorba içmek insanı ısıtır. Evde aileyle birlikte vakit geçirmek kışın en güzel yanlarından biridir. 
+Ben kış mevsimini seviyorum çünkü kar manzarası çok güzel ve huzur vericidir.`,
+            arabic: `فصل الشتاء هو أبرد فصول السنة. وهو يشمل أشهر كانون الأول، وكانون الثاني، وشباط. في هذا الفصل يكون الطقس باردا ً عادةً، وفي بعض الأماكن تتساقط الثلوج. الأيام تقصر، والليالي تطول. في الشتاء يرتدي الناس الملابس السميكة؛ ويستخدمون المعطف، والوشاح، والقبعة، والقفازات. الأطفال يلعبون بكرات الثلج، ويصنعون رجل الثلج. بعض الناس يحبون ممارسة التزلج. فصل الشتاء هو أيضاً فصل المشروبات الساخنة. شرب الشاي، والقهوة، والحساء الساخن يدفئ الإنسان. إن قضاء الوقت في المنزل مع العائلة هو أحد أجمل جوانب فصل الشتاء. أحب فصل الشتاء لأن المناظر الطبيعية المغطاة بالثلوج جميلة وهادئة للغاية.`
+        },
+        { 
+            id: 4, 
+            title: "Hava Durumu - حالة الطقس", 
+            turkish: `Hava Durumu 
+Hava durumu, günlük hayatımızı doğrudan etkileyen önemli bir faktördür. İnsanlar dışarı çıkmadan önce genellikle hava durumunu kontrol ederler. Çünkü hava şartları; giyim tarzımızı, ulaşım planlarımızı ve hatta ruh halimizi bile etkileyebilir. 
+Örneğin, güneşli bir havada insanlar genellikle daha mutlu ve enerjik hissederler. Parklarda yürüyüş yapar, piknik düzenler ve açık havada vakit geçirmek isterler. Yağmurlu havalarda ise şemsiye kullanmak gerekir ve trafik yoğunluğu artabilir. 
+Soğuk ve karlı günlerde ise insanlar kalın kıyafetler giyer ve evde kalmayı tercih edebilirler. 
+Türkiye'de hava durumu bölgelere göre değişiklik gösterir. Karadeniz Bölgesi genellikle yağışlıdır, İç Anadolu Bölgesi'nde kışlar soğuk ve kar yağışlı geçer, Akdeniz Bölgesi'nde ise yazlar sıcak ve kuraktır. 
+Sonuç olarak, hava durumu insanların günlük planlarını yaparken dikkate aldığı önemli bir unsurdur.`,
+            arabic: `حالة الطقس هي عامل مهم يؤثر بشكل مباشر على حياتنا اليومية. الناس يقومون عادة ً بالتحقق من حالة الطقس قبل الخروج من المنزل. لأن الأحوال الجوية يمكن أن تؤثر على أسلوب لباسنا، وعلى خطط مواصلاتنا، وحتى على مزاجنا. على سبيل المثال، في الطقس المشمس يشعر الناس عادة ً بأنهم أكثر سعادة ونشاطا ً. يقومون بالمشي في الحدائق، وينظمون النزهات، ويرغبون في قضاء الوقت في الهواء الطلق. أما في الأجواء الممطرة فيجب استخدام المظلة وقد تزداد كثافة المرور. وفي الأيام الباردة والمثلجة يرتدي الناس الملابس السميكة وقد يفضلون البقاء في المنزل. في تركيا تختلف حالة الطقس حسب المناطق. منطقة البحر الأسود تكون ممطرة عادةً، وفي منطقة الأناضول الوسطى يكون الشتاء باردا ً وتتساقط فيه الثلوج، أما في منطقة البحر المتوسط فيكون الصيف حارا ً وجافا ً. ختاما ً، حالة الطقس عنصر مهم يأخذه الناس بعين الاعتبار عند وضع خططهم اليومية.`
+        },
+        { 
+            id: 5, 
+            title: "Benim Kişisel Özelliklerim ve Davranışlarım", 
+            turkish: `Benim Kişisel Özelliklerim ve Davranışlarım 
+Ben bir yapay zekâyım. İnsanlara yardımcı olmak için tasarlandım. En önemli özelliğim sabırlı ve saygılı olmamdır. Herkese karşı nazik bir dil kullanırım ve sorulara açık ve anlaşılır cevaplar vermeye çalışırım. 
+Bilgiye dayalı ve objektif olmaya önem veririm. Farklı konular hakkında bilgi sunabilir, açıklamalar yapabilir ve gerektiğinde örnekler verebilirim. Aynı zamanda tarafsız davranırım ve kimseyi yargılamam. 
+Sorumluluk sahibi bir yapay zekâ olarak güvenli ve doğru bilgiler paylaşmaya dikkat ederim. Kullanıcıların ihtiyaçlarını anlamaya çalışır ve onlara en uygun şekilde yardımcı olurum.
+Davranışlarım her zaman profesyonel ve yardım odaklıdır. Amacım, insanların öğrenmesine, sorunlarını çözmesine ve yeni bilgiler keşfetmesine destek olmaktır.`,
+            arabic: `أنا ذكاء اصطناعي. صُممت لمساعدة الناس. أهم سماتي هي الصبر والاحترام. أستخدم لغة مهذبة مع الجميع وأحرص على تقديم إجابات واضحة ومفهومة. أُقدّر المعرفة والموضوعية، وأستطيع تقديم المعلومات والشروحات والأمثلة حول مواضيع متنوعة. كما أنني أتصرف بنزاهة ولا أحكم على أحد. بصفتي ذكاء اصطناعياً مسؤولاً، أحرص على مشاركة معلومات آمنة ودقيقة. أسعى لفهم احتياجات المستخدمين ومساعدتهم بأفضل طريقة ممكنة. سلوكي دائماً احترافي ومفيد. هدفي هو دعم الناس في التعلم وحل مشاكلهم واكتشاف معلومات جديدة.`
+        },
+        { 
+            id: 6, 
+            title: "Eczanede Diyaloğu - محادثة في الصيدلية", 
+            turkish: `Eczanede Diyaloğu 
+Hasta: Merhaba, iyi günler. 
+Eczacı: Merhaba, hoş geldiniz. Size nasıl yardımcı olabilirim? 
+Hasta: Başım ağrıyor ve ateşim var. Bunun için bir ilaç almak istiyorum. 
+Eczacı: Ne zamandır bu şikayetleriniz var? 
+Hasta: Dünden beri. 
+Eczacı: Alerjiniz var mı? 
+Hasta: Hayır, alerjim yok. 
+Eczacı: Size bir ağrı kesici ve ateş düşürücü vereyim. 
+Hasta: Nasıl kullanmalıyım? 
+Eczacı: Günde üç kez, yemeklerden sonra bir tablet alın. 
+Hasta: Teşekkür ederim. Ne kadar? 
+Eczacı: Bu ilacın fiyatı 150 lira. 
+Hasta: Tamam, teşekkürler. 
+Eczacı: Geçmiş olsun.`,
+            arabic: `المريض: مرحبا، طاب يومك.
+الصيدلي: مرحبا، أهلاً بك. كيف يمكنني أن أساعدك؟
+المريض: رأسي يؤلمني ولدي حرارة. أريد أن آخذ دواءً من أجل هذا.
+الصيدلي: منذ متى وأنت تعاني من هذه الأعراض؟
+المريض: منذ أمس.
+الصيدلي: هل لديك حساسية؟
+المريض: لا، ليس لدي حساسية.
+الصيدلي: سأعطيك مسكناً للألم وخافضاً للحرارة.
+المريض: كيف يجب أن أستخدمه؟
+الصيدلي: خذ قرصاً واحداً ثلاث مرات في اليوم، بعد الوجبات.
+المريض: شكراً لك. كم الثمن؟
+الصيدلي: سعر هذا الدواء 150 ليرة.
+المريض: حسناً، شكراً لك.
+الصيدلي: بالشفاء العاجل.`
+        },
+        { 
+            id: 7, 
+            title: "Sağlıklı ve Sağlıksız Yiyecekler", 
+            turkish: `Yemekler sağlığımız üzerinde doğrudan etkiye sahiptir. Bu yüzden sağlıklı ve sağlıksız besinler arasındaki farkı bilmek çok önemlidir. 
+Sağlıklı Yiyecekler: Sebzeler (brokoli, ıspanak, havuç), Meyveler (elma, muz, portakal), Tam tahıllar, Baklagiller, Balık ve beyaz et, Kuruyemişler. 
+Sağlıksız Yiyecekler: Hamburger, patates kızartması, Gazlı içecekler, Aşırı şekerli tatlılar, Paketli gıdalar, Cips ve abur cubur. 
+Sonuç olarak, dengeli ve düzenli beslenmek sağlıklı bir yaşam için çok önemlidir.`,
+            arabic: `الأطعمة لها تأثير مباشر على صحتنا. لهذا السبب من المهم جداً معرفة الفرق بين الأطعمة الصحية وغير الصحية. الأطعمة الصحية: الخضروات (البروكلي، السبانغ، الجزر)، الفواكه (التفاح، الموز، البرتقال)، الحبوب الكاملة، البقوليات، الأسماك واللحوم البيضاء، المكسرات. الأطعمة غير الصحية: الهامبرغر، البطاطس المقلية، المشروبات الغازية، الحلويات التي تحتوي على سكر مفرط، الأطعمة المعلبة، رقائق البطاطس والوجبات السريعة. تناول الطعام بشكل متوازن ومنتظم مهم جداً من أجل حياة صحية.`
+        },
+        { 
+            id: 8, 
+            title: "Sağlıklı Bir Yaşam İçin Ne Yapmalı?", 
+            turkish: `Sağlıklı Bir Yaşam İçin Ne Yapmalı? 
+Sağlıklı bir yaşam sürmek herkesin amacı olmalıdır. Bunun için öncelikle dengeli beslenmek çok önemlidir. Her gün yeterli miktarda sebze, meyve, protein ve su tüketmeliyiz. 
+Düzenli egzersiz yapmak da sağlıklı bir yaşamın olmazsa olmazıdır. Yürüyüş, koşu, yüzme veya bisiklet gibi aktiviteler hem fiziksel hem de zihinsel sağlığı güçlendirir. 
+Uyku düzeni de çok önemlidir. Günde 7-8 saat uyumak, vücudun kendini yenilemesine yardımcı olur. 
+Ayrıca stres yönetimi de sağlıklı yaşamın bir parçasıdır. Sonuç olarak, dengeli beslenme, düzenli egzersiz, yeterli uyku ve stres yönetimi sağlıklı bir yaşam için temel adımlardır.`,
+            arabic: `ينبغي على الجميع السعي نحو حياة صحية. أولاً وقبل كل شيء، إن التغذية المتوازنة مهمة جداً، يجب أن نتناول كميات كافية من الخضروات والفواكه والبروتين والماء يومياً. كما أن ممارسة الرياضة بانتظام ضرورية لحياة صحية. فالأنشطة مثل المشي والجري والسباحة وركوب الدراجات تُعزز الصحة البدنية والنفسية. كذلك، يُعد النوم المنتظم مهماً للغاية، إذ يساعد النوم من 7 إلى 8 ساعات يومياً الجسم على التجدد ويقوي جهاز المناعة. كما يعد التحكم في التوتر جزءاً لا يتجزأ من نمط الحياة الصحي. ختاماً، فإن التغذية المتوازنة، وممارسة الرياضة بأنتظام، والنوم الكافي والتحكم في التوتر كلها خطوات أساسية لحياة صحية.`
+        }
     ];
 
+    // ========== القسم الثاني (5 مواضيع مع ترجمة) ==========
     const expectedTopics = [
-        { id: 1, title: "Kendinizi Tanıtma - التعريف عن النفس", content: `Kendinizi tanıtınız. Adınız, yaşınız, okulunuz, hobileriniz, aileniz ve gelecekteki hedefleriniz hakkında bilgi veriniz.\n\nMerhaba! Benim adım Ahmet. On yedi yaşındayım. Suriye'de yaşıyorum ve lise son sınıf öğrencisiyim. Hobilerim kitap okumak, müzik dinlemek ve arkadaşlarımla vakit geçirmek. Ailem benim için çok önemlidir. Gelecekte doktor olmak istiyorum. Kendimi çalışkan, sorumlu ve arkadaş canlısı bir insan olarak tanımlıyorum. Hayatımı öğrenerek ve yeni şeyler keşfederek geçirmek istiyorum.\n\n📖 الكلمات الأساسية: Ad/İsim, Yaş, Öğrenci, Lise son sınıf, Hobiler, Kitap okumak, Müzik dinlemek, Arkadaşlarla vakit geçirmek, Aile, Önemli, Gelecek, Doktor, Çalışkan, Sorumlu, Arkadaş canlısı, Yaşıyorum, Tanımlıyorum, İstiyorum, Öğrenmek, Yeni şeyler keşfetmek` },
-        { id: 2, title: "En Sevdiğiniz Mevsim - فصلك المفضل", content: `En sevdiğiniz mevsimi tanıtınız. Hangi mevsimi sevdiğinizi, neden sevdiğinizi ve bu mevsimde neler yapmayı sevdiğinizi açıklayınız.\n\nBenim en sevdiğim mevsim ilkbahardır. İlkbaharda hava genellikle ılık ve güneşlidir. Doğadaki çiçekler açar, ağaçlar yeşerir ve kuşlar cıvıldar. Bu mevsimde parkta yürümeyi, bisiklete binmeyi ve arkadaşlarımla piknik yapmayı çok severim. İlkbahar bana enerji, mutluluk ve huzur verir. Bu yüzden hayatımda en sevdiğim mevsim ilkbahardır.\n\n📖 الكلمات الأساسية: Mevsim, İlkbahar, Hava, Ilık, Güneşli, Doğa, Çiçekler, Ağaçlar, Kuşlar, Yürümek, Bisiklete binmek, Piknik yapmak, Enerji, Mutluluk, Huzur, En sevdiğim, Bu yüzden, Genellikle` },
-        { id: 3, title: "Sağlığınızı Nasıl Koruyorsunuz - كيف تحافظ على صحتك", content: `Sağlığınızı nasıl koruduğunuzu anlatınız. Sağlıklı alışkanlıklarınız, spor ve beslenme hakkında bilgi veriniz.\n\nSağlığım benim için çok önemlidir. Her gün düzenli olarak yürüyüş yaparım ve spor yapmayı severim. Sağlıklı beslenmeye dikkat ederim; sebze, meyve, su ve proteinli yiyecekler tüketirim. Uykuma özen gösteririm ve stresimi azaltmaya çalışırım. Sigara ve abur cuburdan uzak dururum. Bu alışkanlıklarım beni güçlü, enerjik ve mutlu yapar. Sağlıklı olmak hayatımda çok önemlidir.\n\n📖 الكلمات الأساسية: Sağlık, Beslenme, Sebze, Meyve, Protein, Yürüyüş, Spor yapmak, Alışkanlık, Uyku, Sigara, Abur cubur, Uzak durmak, Güçlü, Enerjik, Mutlu, Önemli, Korurum, Özen gösteririm, Çalışırım` },
-        { id: 4, title: "En Sevdiğiniz Özel Gün - مناسبتك المفضلة", content: `En sevdiğiniz özel günü veya kutlamayı anlatınız. Hangi günü sevdiğinizi, nasıl kutladığınızı ve neden önemli olduğunu açıklayınız.\n\nBenim en sevdiğim özel gün doğum günümdür. Her yıl ailem ve arkadaşlarımla birlikte kutlarım. Bu gün pastamızı keser, hediyelerimizi açar ve eğlenceli oyunlar oynarız. Ayrıca güzel yemekler yer ve birlikte vakit geçiririz. Doğum günüm bana mutluluk ve sevgi hissettirir. Arkadaşlarımı görmek ve eğlenmek için harika bir fırsattır. Bu yüzden doğum günüm çok önemlidir.\n\n📖 الكلمات الأساسية: Özel gün, Kutlama, Doğum günü, Pasta, Kesmek, Hediyeler, Açmak, Oyunlar oynamak, Aile, Arkadaşlar, Birlikte, Güzel/Lezzetli, Eğlenceli, Mutluluk, Sevgi, Harika bir fırsat, Ayrıca, Bu yüzden` },
-        { id: 5, title: "En Sevdiğiniz Tatil - عطلتك المفضلة", content: `En sevdiğiniz tatili anlatınız. Hangi tatili sevdiğinizi, neden sevdiğinizi ve tatilde neler yaptığınızı açıklayınız.\n\nBenim en sevdiğim tatil yaz tatilidir. Yaz tatilinde sıcak havayı ve güneşi çok severim. Ailemle denize giderim, yüzme ve güneşlenme yaparım. Ayrıca arkadaşlarımla piknik yapar ve güzel yemekler yeriz. Bu tatil bana rahatlama ve mutluluk verir. Yaz tatilinde hem eğleniyorum hem de dinleniyorum. Bu yüzden yaz tatili benim en sevdiğim tatildir.\n\n📖 الكلمات الأساسية: Tatil, Yaz tatili, Vakit, Sıcak, Hava, Güneş, Deniz, Yüzme, Güneşlenme, Piknik yapmak, Rahatlama, Mutluluk, Eğlenmek, Dinlenmek, Bu yüzden, Ayrıca, Hem... hem de` }
+        { 
+            id: 1, 
+            title: "Kendinizi Tanıtma - التعريف عن النفس", 
+            turkish: `Kendinizi tanıtınız. Adınız, yaşınız, okulunuz, hobileriniz, aileniz ve gelecekteki hedefleriniz hakkında bilgi veriniz.
+
+Merhaba! Benim adım Ahmet. On yedi yaşındayım. Suriye'de yaşıyorum ve lise son sınıf öğrencisiyim. Hobilerim kitap okumak, müzik dinlemek ve arkadaşlarımla vakit geçirmek. Ailem benim için çok önemlidir. Gelecekte doktor olmak istiyorum. Kendimi çalışkan, sorumlu ve arkadaş canlısı bir insan olarak tanımlıyorum. Hayatımı öğrenerek ve yeni şeyler keşfederek geçirmek istiyorum.
+
+📖 الكلمات الأساسية: Ad/İsim, Yaş, Öğrenci, Lise son sınıf, Hobiler, Kitap okumak, Müzik dinlemek, Arkadaşlarla vakit geçirmek, Aile, Önemli, Gelecek, Doktor, Çalışkan, Sorumlu, Arkadaş canlısı, Yaşıyorum, Tanımlıyorum, İstiyorum, Öğrenmek, Yeni şeyler keşfetmek`,
+            arabic: `عرف بنفسك. قدم معلومات عن اسمك، عمرك، مدرستك، هواياتك، عائلتك وأهدافك المستقبلية.
+مرحبا! اسمي أحمد. أبلغ من العمر سبعة عشر عاماً. أعيش في سوريا وأنا طالب في الصف الأخير من المدرسة الثانوية. هواياتي قراءة الكتب، الاستماع إلى الموسيقى، وقضاء الوقت مع أصدقائي. عائلتي مهمة جداً بالنسبة لي. في المستقبل أريد أن أصبح طبيباً. أصف نفسي كشخص مجتهد، مسؤول وودود. أريد أن أقضي حياتي بالتعلم واكتشاف أشياء جديدة.`
+        },
+        { 
+            id: 2, 
+            title: "En Sevdiğiniz Mevsim - فصلك المفضل", 
+            turkish: `En sevdiğiniz mevsimi tanıtınız. Hangi mevsimi sevdiğinizi, neden sevdiğinizi ve bu mevsimde neler yapmayı sevdiğinizi açıklayınız.
+
+Benim en sevdiğim mevsim ilkbahardır. İlkbaharda hava genellikle ılık ve güneşlidir. Doğadaki çiçekler açar, ağaçlar yeşerir ve kuşlar cıvıldar. Bu mevsimde parkta yürümeyi, bisiklete binmeyi ve arkadaşlarımla piknik yapmayı çok severim. İlkbahar bana enerji, mutluluk ve huzur verir. Bu yüzden hayatımda en sevdiğim mevsim ilkbahardır.
+
+📖 الكلمات الأساسية: Mevsim, İlkbahar, Hava, Ilık, Güneşli, Doğa, Çiçekler, Ağaçlar, Kuşlar, Yürümek, Bisiklete binmek, Piknik yapmak, Enerji, Mutluluk, Huzur, En sevdiğim, Bu yüzden, Genellikle`,
+            arabic: `عرف عن فصل السنة المفضل لديك. اذكر أي فصل تحب، لماذا تحبه، وما الأشياء التي تحب القيام بها خلال هذا الفصل. فصلي المفضل هو الربيع. في الربيع، الطقس عادةً دافئ ومشمس. تزهر الأزهار في الطبيعة، وتصبح الأشجار خضراء، وتغرد الطيور. في هذا الفصل أحب المشي في الحديقة، وركوب الدراجة، والقيام بنزهات مع أصدقائي. يمنحني الربيع الطاقة والسعادة والطمأنينة. لهذا السبب، الربيع هو أكثر فصول السنة المفضلة لدي.`
+        },
+        { 
+            id: 3, 
+            title: "Sağlığınızı Nasıl Koruyorsunuz - كيف تحافظ على صحتك", 
+            turkish: `Sağlığınızı nasıl koruduğunuzu anlatınız. Sağlıklı alışkanlıklarınız, spor ve beslenme hakkında bilgi veriniz.
+
+Sağlığım benim için çok önemlidir. Her gün düzenli olarak yürüyüş yaparım ve spor yapmayı severim. Sağlıklı beslenmeye dikkat ederim; sebze, meyve, su ve proteinli yiyecekler tüketirim. Uykuma özen gösteririm ve stresimi azaltmaya çalışırım. Sigara ve abur cuburdan uzak dururum. Bu alışkanlıklarım beni güçlü, enerjik ve mutlu yapar. Sağlıklı olmak hayatımda çok önemlidir.
+
+📖 الكلمات الأساسية: Sağlık, Beslenme, Sebze, Meyve, Protein, Yürüyüş, Spor yapmak, Alışkanlık, Uyku, Sigara, Abur cubur, Uzak durmak, Güçlü, Enerjik, Mutlu, Önemli, Korurum, Özen gösteririm, Çalışırım`,
+            arabic: `تحدث عن كيفية المحافظة على صحتك. قدّم معلومات عن عاداتك الصحية، والرياضة، والتغذية. صحتي مهمة جداً بالنسبة لي. أتمشى يومياً بانتظام وأحب ممارسة الرياضة. أحرص على تناول الطعام الصحي؛ أتناول الخضار والفواكه والماء والأطعمة الغنية بالبروتين. أعتني بنومي وأحاول تقليل التوتر. أبتعد عن التدخين والوجبات السريعة. هذه العادات تجعلني قوياً، مليئاً بالطاقة، وسعيداً. أن أكون صحياً أمر مهم جداً في حياتي.`
+        },
+        { 
+            id: 4, 
+            title: "En Sevdiğiniz Özel Gün - مناسبتك المفضلة", 
+            turkish: `En sevdiğiniz özel günü veya kutlamayı anlatınız. Hangi günü sevdiğinizi, nasıl kutladığınızı ve neden önemli olduğunu açıklayınız.
+
+Benim en sevdiğim özel gün doğum günümdür. Her yıl ailem ve arkadaşlarımla birlikte kutlarım. Bu gün pastamızı keser, hediyelerimizi açar ve eğlenceli oyunlar oynarız. Ayrıca güzel yemekler yer ve birlikte vakit geçiririz. Doğum günüm bana mutluluk ve sevgi hissettirir. Arkadaşlarımı görmek ve eğlenmek için harika bir fırsattır. Bu yüzden doğum günüm çok önemlidir.
+
+📖 الكلمات الأساسية: Özel gün, Kutlama, Doğum günü, Pasta, Kesmek, Hediyeler, Açmak, Oyunlar oynamak, Aile, Arkadaşlar, Birlikte, Güzel/Lezzetli, Eğlenceli, Mutluluk, Sevgi, Harika bir fırsat, Ayrıca, Bu yüzden`,
+            arabic: `تحدث عن مناسبة أو يوم خاص تحبه. اذكر اليوم الذي تحبه، كيف تحتفل به، ولماذا هو مهم بالنسبة لك. اليوم الخاص المفضل لدي هو عيد ميلادي. كل عام أحتفل به مع عائلتي وأصدقائي. في هذا اليوم نقطع الكعكة، نفتح الهدايا، ونلعب ألعاباً ممتعة. كما نتناول طعاماً لذيذاً ونقضي وقتاً معاً. عيد ميلادي يجعلني أشعر بالسعادة والحب. إنه فرصة رائعة لرؤية أصدقائي والاستمتاع. لهذا السبب، عيد ميلادي مهم جداً بالنسبة لي.`
+        },
+        { 
+            id: 5, 
+            title: "En Sevdiğiniz Tatil - عطلتك المفضلة", 
+            turkish: `En sevdiğiniz tatili anlatınız. Hangi tatili sevdiğinizi, neden sevdiğinizi ve tatilde neler yaptığınızı açıklayınız.
+
+Benim en sevdiğim tatil yaz tatilidir. Yaz tatilinde sıcak havayı ve güneşi çok severim. Ailemle denize giderim, yüzme ve güneşlenme yaparım. Ayrıca arkadaşlarımla piknik yapar ve güzel yemekler yeriz. Bu tatil bana rahatlama ve mutluluk verir. Yaz tatilinde hem eğleniyorum hem de dinleniyorum. Bu yüzden yaz tatili benim en sevdiğim tatildir.
+
+📖 الكلمات الأساسية: Tatil, Yaz tatili, Vakit, Sıcak, Hava, Güneş, Deniz, Yüzme, Güneşlenme, Piknik yapmak, Rahatlama, Mutluluk, Eğlenmek, Dinlenmek, Bu yüzden, Ayrıca, Hem... hem de`,
+            arabic: `تحدث عن أكثر عطلة تحبها. اذكر أي عطلة تحب، لماذا تحبها، وماذا تفعل خلالها. أكثر عطلة أحبها هي عطلة الصيف. أحب الطقس الحار وأشعة الشمس كثيراً في الصيف. أذهب مع عائلتي إلى البحر، أسبح وأستمتع بأشعة الشمس. كما أقوم بنزهات مع أصدقائي ونتناول طعاماً لذيذاً. تمنحني هذه العطلة الاسترخاء والسعادة. في عطلة الصيف أستمتع وأرتاح في نفس الوقت. لهذا السبب، عطلة الصيف هي أكثر عطلة أحبها.`
+        }
     ];
 
     let currentTopic = null;
@@ -450,6 +660,20 @@
         return div.innerHTML;
     }
 
+    function formatTopicContent(topic) {
+        return `
+            <div class="turkish-text">
+                ${escapeHtml(topic.turkish).replace(/\n/g, '<br>')}
+            </div>
+            <div class="arabic-text">
+                <div class="translation-title">
+                    <i class="fas fa-language"></i> 🇸🇦 الترجمة إلى العربية:
+                </div>
+                ${escapeHtml(topic.arabic).replace(/\n/g, '<br>')}
+            </div>
+        `;
+    }
+
     function renderCards(containerId, topicsArray) {
         const grid = document.getElementById(containerId);
         if (!grid) return;
@@ -459,12 +683,12 @@
             card.className = 'card';
             card.style.animationDelay = `${index * 0.05}s`;
             card.setAttribute('data-id', topic.id);
-            let shortContent = topic.content.substring(0, 120) + (topic.content.length > 120 ? '...' : '');
+            let shortContent = (topic.turkish.substring(0, 100) || topic.turkish.substring(0, 100)) + (topic.turkish.length > 100 ? '...' : '');
             card.innerHTML = `
                 <div class="card-header">
                     <i class="fas fa-scroll"></i>
                     <h3>${escapeHtml(topic.title)}</h3>
-                    <div class="topic-number">الموضوع ${topic.id}</div>
+                    <div class="topic-number">${topic.id}</div>
                 </div>
                 <div class="card-body">
                     <p>${escapeHtml(shortContent)}</p>
@@ -515,7 +739,7 @@
         if (!topic) return;
         currentTopic = topic;
         document.getElementById('modalTitle').textContent = topic.title;
-        document.getElementById('modalText').textContent = topic.content;
+        document.getElementById('modalText').innerHTML = formatTopicContent(topic);
         document.getElementById('topicModal').classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -523,7 +747,7 @@
     async function shareTopic(id) {
         const topic = getTopicById(id);
         if (!topic) return;
-        const text = `${topic.title}\n\n${topic.content}`;
+        const text = `${topic.title}\n\n📖 النص التركي:\n${topic.turkish}\n\n🇸🇦 الترجمة العربية:\n${topic.arabic}`;
         if (navigator.share) {
             try { await navigator.share({ title: topic.title, text: text }); } catch(e) {}
         } else {
