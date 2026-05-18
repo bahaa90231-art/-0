@@ -7,12 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Cairo', sans-serif;
             background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483);
@@ -22,22 +17,13 @@
             color: #fff;
             font-size: 18px;
         }
-
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
-        .page {
-            display: none;
-            min-height: 100vh;
-        }
-
-        .page.active {
-            display: block;
-        }
-
+        .page { display: none; min-height: 100vh; }
+        .page.active { display: block; }
         .header {
             text-align: center;
             padding: 2rem 1.5rem;
@@ -45,7 +31,6 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .header h1 {
             font-size: 2.2rem;
             font-weight: 800;
@@ -55,20 +40,8 @@
             color: transparent;
             margin-bottom: 0.8rem;
         }
-
-        .header h1 i {
-            background: none;
-            -webkit-background-clip: unset;
-            background-clip: unset;
-            color: #f39c12;
-            margin-left: 10px;
-        }
-
-        .header .sub {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1rem;
-        }
-
+        .header h1 i { background: none; color: #f39c12; margin-left: 10px; }
+        .header .sub { color: rgba(255, 255, 255, 0.8); font-size: 1rem; }
         .developer {
             display: inline-block;
             margin-top: 0.8rem;
@@ -77,12 +50,7 @@
             border-radius: 50px;
             font-size: 0.9rem;
         }
-
-        .developer span {
-            color: #f39c12;
-            font-weight: bold;
-        }
-
+        .developer span { color: #f39c12; font-weight: bold; }
         .contact-info {
             display: flex;
             justify-content: center;
@@ -90,7 +58,6 @@
             margin-top: 1rem;
             flex-wrap: wrap;
         }
-
         .contact-card {
             background: rgba(0, 0, 0, 0.3);
             border-radius: 50px;
@@ -101,11 +68,7 @@
             font-size: 0.85rem;
             border: 1px solid rgba(243, 156, 18, 0.3);
         }
-
-        .contact-card i {
-            color: #f39c12;
-        }
-
+        .contact-card i { color: #f39c12; }
         .btn-website {
             background: #f39c12;
             color: #1a1a2e;
@@ -121,186 +84,143 @@
             font-family: 'Cairo', sans-serif;
             font-weight: bold;
         }
-
-        .btn-website:hover {
-            background: #e67e22;
-            transform: scale(1.02);
-        }
-
+        .btn-website:hover { background: #e67e22; transform: scale(1.02); }
         .nav-buttons {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
-            margin: 2rem;
+            gap: 1rem;
+            margin: 1.5rem;
             flex-wrap: wrap;
         }
-
         .nav-btn {
-            padding: 1rem 2.5rem;
+            padding: 0.8rem 1.8rem;
             border: none;
-            border-radius: 60px;
+            border-radius: 50px;
             font-family: 'Cairo', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             background: rgba(255, 255, 255, 0.1);
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
-        .nav-btn.active {
-            background: #f39c12;
-            color: #1a1a2e;
-            border-color: #f39c12;
-        }
-
-        .nav-btn:hover {
-            background: #f39c12;
-            color: #1a1a2e;
-            transform: scale(1.02);
-        }
-
-        .section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.5rem 1.5rem 2.5rem;
-        }
-
+        .nav-btn.active { background: #f39c12; color: #1a1a2e; border-color: #f39c12; }
+        .nav-btn:hover { background: #f39c12; color: #1a1a2e; transform: scale(1.02); }
+        .section { max-width: 1400px; margin: 0 auto; padding: 1.5rem 1.5rem 2rem; }
         .section-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             padding-right: 1rem;
-            border-right: 6px solid #f39c12;
+            border-right: 5px solid #f39c12;
             display: inline-block;
         }
-
-        .section-title i {
-            margin-left: 12px;
-            color: #f39c12;
-        }
-
+        .section-title i { margin-left: 10px; color: #f39c12; }
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.8rem;
         }
-
         .card {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(15px);
-            border-radius: 30px;
+            border-radius: 25px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.15);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
-            animation: fadeInUp 0.6s ease backwards;
         }
-
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-8px) scale(1.01);
             border-color: rgba(243, 156, 18, 0.5);
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         .card-header {
             background: linear-gradient(135deg, rgba(243, 156, 18, 0.2), rgba(255, 255, 255, 0.05));
-            padding: 1.8rem 1.5rem;
+            padding: 1.5rem 1.5rem;
             position: relative;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         .card-header i {
-            font-size: 2.3rem;
+            font-size: 2rem;
             position: absolute;
-            bottom: -20px;
+            bottom: -18px;
             left: 20px;
             background: #f39c12;
             color: #1a1a2e;
-            padding: 12px;
+            padding: 10px;
             border-radius: 50%;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-
         .card-header h3 {
-            font-size: 1.4rem;
-            margin-right: 65px;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            margin-right: 60px;
+            margin-bottom: 0.3rem;
             color: #fff;
         }
-
         .card-header .topic-number {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             opacity: 0.7;
-            margin-right: 65px;
+            margin-right: 60px;
         }
-
-        .card-body {
-            padding: 1.8rem 1.5rem 1rem;
-        }
-
+        .card-body { padding: 1.5rem 1.5rem 0.8rem; }
         .card-body p {
             color: rgba(255, 255, 255, 0.85);
-            line-height: 1.7;
-            font-size: 1rem;
+            line-height: 1.6;
+            font-size: 0.9rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-
         .card-footer {
-            padding: 1rem 1.5rem 1.5rem;
+            padding: 0.8rem 1.5rem 1.2rem;
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 0.5rem;
+            margin-top: 0.3rem;
         }
-
         .btn-icon {
             flex: 1;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 0.8rem;
-            border-radius: 16px;
+            padding: 0.7rem;
+            border-radius: 14px;
             font-family: 'Cairo', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             color: #fff;
             font-weight: 500;
         }
-
-        .btn-icon i {
-            font-size: 1.1rem;
+        .btn-icon:hover { background: #f39c12; border-color: #f39c12; color: #1a1a2e; }
+        .summary-container {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 25px;
+            padding: 2rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(243, 156, 18, 0.3);
         }
-
-        .btn-icon:hover {
-            background: #f39c12;
-            border-color: #f39c12;
-            transform: scale(1.03);
-            color: #1a1a2e;
+        .summary-text {
+            line-height: 1.9;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.92);
+            max-height: 600px;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            white-space: pre-wrap;
+            word-break: break-word;
         }
-
         .modal-page {
             display: none;
             position: fixed;
@@ -312,152 +232,113 @@
             z-index: 2000;
             overflow-y: auto;
         }
-
-        .modal-page.active {
-            display: block;
-        }
-
+        .modal-page.active { display: block; }
         .modal-content {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             min-height: 100vh;
-            padding: 2.5rem 2rem;
-            max-width: 1000px;
+            padding: 2rem;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
         }
-
         .close-modal {
             position: fixed;
-            top: 25px;
-            right: 25px;
+            top: 20px;
+            right: 20px;
             background: #e74c3c;
             color: white;
-            width: 55px;
-            height: 55px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 1.6rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            font-size: 1.4rem;
             transition: all 0.3s;
             z-index: 2001;
             border: none;
         }
-
-        .close-modal:hover {
-            transform: rotate(90deg);
-            background: #c0392b;
-        }
-
+        .close-modal:hover { transform: rotate(90deg); background: #c0392b; }
         .modal-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #f39c12;
             margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            border-bottom: 4px solid #f39c12;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #f39c12;
             display: inline-block;
         }
-
         .turkish-content {
-            line-height: 2;
-            font-size: 1.2rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.92);
             margin: 1.5rem 0;
             white-space: pre-wrap;
-            word-break: break-word;
             background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 20px;
         }
-
         .translation-btn {
             background: #f39c12;
             color: #1a1a2e;
             border: none;
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.5rem;
             border-radius: 50px;
             font-family: 'Cairo', sans-serif;
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             margin: 0.5rem 0;
         }
-
-        .translation-btn:hover {
-            background: #e67e22;
-            transform: scale(1.02);
-        }
-
+        .translation-btn:hover { background: #e67e22; }
         .arabic-content {
             display: none;
-            line-height: 2;
-            font-size: 1.2rem;
+            line-height: 1.9;
+            font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.92);
             margin: 1rem 0;
-            white-space: pre-wrap;
-            word-break: break-word;
             background: rgba(243, 156, 18, 0.1);
             padding: 1.5rem;
-            border-radius: 24px;
+            border-radius: 20px;
             border: 1px solid rgba(243, 156, 18, 0.3);
         }
-
-        .arabic-content.show {
-            display: block;
-        }
-
+        .arabic-content.show { display: block; }
         .modal-actions {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             justify-content: center;
         }
-
         .btn-share {
-            min-width: 200px;
-            padding: 1rem 2rem;
+            min-width: 180px;
+            padding: 0.8rem 1.5rem;
             border: none;
-            border-radius: 60px;
+            border-radius: 50px;
             font-family: 'Cairo', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            transition: all 0.3s;
+            gap: 10px;
             background: #2980b9;
             color: white;
         }
-
-        .btn-share:hover {
-            background: #3498db;
-            transform: scale(1.02);
-            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
-        }
-
+        .btn-share:hover { background: #3498db; }
         @media (max-width: 600px) {
             body { font-size: 16px; }
-            .header h1 { font-size: 1.6rem; }
-            .cards-grid { gap: 1.2rem; grid-template-columns: 1fr; }
-            .modal-title { font-size: 1.5rem; }
-            .turkish-content, .arabic-content { font-size: 1rem; padding: 1.2rem; }
-            .btn-icon { font-size: 0.85rem; }
-            .nav-btn { padding: 0.7rem 1.5rem; font-size: 0.95rem; }
-            .section-title { font-size: 1.5rem; }
-            .card-header h3 { font-size: 1.2rem; }
-            .btn-share { min-width: 160px; padding: 0.8rem 1.5rem; font-size: 1rem; }
-            .contact-card { font-size: 0.7rem; }
-            .btn-website { font-size: 0.7rem; padding: 0.3rem 1rem; }
+            .header h1 { font-size: 1.5rem; }
+            .cards-grid { gap: 1rem; grid-template-columns: 1fr; }
+            .modal-title { font-size: 1.4rem; }
+            .turkish-content, .arabic-content { font-size: 0.95rem; padding: 1rem; }
+            .nav-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
+            .section-title { font-size: 1.4rem; }
+            .summary-text { font-size: 0.9rem; max-height: 450px; padding: 1rem; }
         }
     </style>
 </head>
@@ -478,6 +359,7 @@
     <div class="nav-buttons">
         <button class="nav-btn active" id="goToPage1"><i class="fas fa-star"></i> المواضيع الأساسية</button>
         <button class="nav-btn" id="goToPage2"><i class="fas fa-exclamation-triangle"></i> مواضيع مهمة</button>
+        <button class="nav-btn" id="goToPage3"><i class="fas fa-file-alt"></i> ملخص الكتاب</button>
     </div>
     <div class="section">
         <h2 class="section-title"><i class="fas fa-star"></i> المواضيع الأساسية</h2>
@@ -493,17 +375,43 @@
         <div class="developer">💻 المبرمج و المطور: <span>بهاء الحسين</span></div>
         <div class="contact-info">
             <div class="contact-card"><i class="fas fa-code"></i> 📱 المبرمج: 0982520358</div>
-            <div class="contact-card"><i class="fas fa-chalkboard-user"></i> 📞 +الأستاذ: 306998442073</div>
+            <div class="contact-card"><i class="fas fa-chalkboard-user"></i> 📞 الأستاذ: +306998442073</div>
             <button class="btn-website" id="goToDeveloperSite2"><i class="fas fa-globe"></i> موقع المبرمج</button>
         </div>
     </div>
     <div class="nav-buttons">
         <button class="nav-btn" id="goToPage1b"><i class="fas fa-star"></i> المواضيع الأساسية</button>
         <button class="nav-btn active" id="goToPage2b"><i class="fas fa-exclamation-triangle"></i> مواضيع مهمة</button>
+        <button class="nav-btn" id="goToPage3b"><i class="fas fa-file-alt"></i> ملخص الكتاب</button>
     </div>
     <div class="section">
         <h2 class="section-title"><i class="fas fa-exclamation-triangle"></i> مواضيع مهمة</h2>
         <div class="cards-grid" id="expectedTopicsGrid"></div>
+    </div>
+</div>
+
+<!-- الصفحة الثالثة - ملخص الكتاب -->
+<div id="page3" class="page">
+    <div class="header">
+        <h1><i class="fas fa-file-alt"></i> ملخص الكتاب</h1>
+        <div class="sub">📖 ملخص تعليمي لمادة اللغة التركية - للمرحلة الثانوية</div>
+        <div class="developer">🎓 إعداد الأستاذ: <span>شادي رحال</span></div>
+        <div class="contact-info">
+            <div class="contact-card"><i class="fas fa-code"></i> 📱 المبرمج: 0982520358</div>
+            <div class="contact-card"><i class="fas fa-chalkboard-user"></i> 📞 الأستاذ: +306998442073</div>
+            <button class="btn-website" id="goToDeveloperSite3"><i class="fas fa-globe"></i> موقع المبرمج</button>
+        </div>
+    </div>
+    <div class="nav-buttons">
+        <button class="nav-btn" id="goToPage1c"><i class="fas fa-star"></i> المواضيع الأساسية</button>
+        <button class="nav-btn" id="goToPage2c"><i class="fas fa-exclamation-triangle"></i> مواضيع مهمة</button>
+        <button class="nav-btn active" id="goToPage3c"><i class="fas fa-file-alt"></i> ملخص الكتاب</button>
+    </div>
+    <div class="section">
+        <h2 class="section-title"><i class="fas fa-file-alt"></i> ملخص الكتاب</h2>
+        <div class="summary-container">
+            <div class="summary-text" id="summaryContent"></div>
+        </div>
     </div>
 </div>
 
@@ -521,206 +429,246 @@
 </div>
 
 <script>
-    // ========== المواضيع الأساسية (8 مواضيع) ==========
+    // المواضيع الأساسية (8 مواضيع)
     const mainTopics = [
-        { 
-            id: 1, 
-            title: "Manavda - محادثة في السوق", 
-            turkish: `Manavda 
-Müşteri: Merhaba. Domatesin kilosu ne kadar? 
-Manav: Merhaba, hoş geldiniz. Domatesin kilosu 30 lira. 
-Müşteri: Çok pahalıymış. Daha ucuzu var mı? 
-Manav: Evet, şu taraftakiler 25 lira. 
-Müşteri: Tamam, bir kilo domates alayım. Muz ne kadar? 
-Manav: Muzun kilosu 40 lira. 
-Müşteri: Yarım kilo muz ve bir kilo elma da alayım. 
-Manav: Başka bir şey ister misiniz? 
-Müşteri: Salatalık taze mi? 
-Manav: Evet, bugün geldi. Çok taze. 
-Müşteri: O zaman yarım kilo salatalık ekleyin lütfen. 
-Manav: Tabii. Hepsi 110 lira tuttu. 
-Müşteri: Buyurun. Teşekkür ederim. 
-Manav: Ben teşekkür ederim. İyi günler!`,
-            arabic: `الزبون: مرحبا. كم سعر الكيلو من الطماطم؟
-البائع: مرحبا. أهلاً وسهلاً. كيلو الطماطم بـ 30 ليرة.
-الزبون: غالية جداً. هل يوجد أرخص منها؟
-البائع: نعم، تلك الموجودة هناك بـ 25 ليرة.
-الزبون: حسناً، سآخذ كيلو طماطم. بكم كيلو الموز؟
-البائع: كيلو الموز 40 ليرة.
-الزبون: سآخذ نصف كيلو موز وكيلو تفاح أيضاً.
-البائع: هل تريد شيئاً آخر؟
-الزبون: هل الخيار طازج؟
-البائع: نعم، وصل اليوم طازج جداً.
-الزبون: إذاً أضف نصف كيلو خيار من فضلك.
-البائع: بالتأكيد. الحساب كله 110 ليرات.
-الزبون: تفضل. شكراً لك.
-البائع: شكراً لك. طاب يومك!`
-        },
-        { 
-            id: 2, 
-            title: "Restoranda Diyalog - محادثة في المطعم", 
-            turkish: `Restoranda Diyalog 
-Garson: Hoş geldiniz efendim. Buyurun, ne alırsınız? 
-Müşteri: Merhaba, menüyü alabilir miyim? 
-Garson: Tabii efendim, buyurun. 
-Müşteri: Bugün ne tavsiye edersiniz? 
-Garson: Bugün ızgara tavuk ve mercimek çorbası tavsiye ederim. 
-Müşteri: Tamam, bir mercimek çorbası ve bir porsiyon ızgara tavuk alayım. 
-Garson: İçecek olarak ne alırsınız? 
-Müşteri: Bir ayran lütfen. 
-Garson: Başka bir şey ister misiniz? 
-Müşteri: Hayır, teşekkür ederim. 
-Garson: Siparişiniz birazdan hazır olacak. Afiyet olsun.`,
-            arabic: `النادل: أهلاً وسهلاً سيدي. تفضل، ماذا تطلب؟
-الزبون: مرحبا، هل يمكنني الحصول على قائمة الطعام؟
-النادل: بالطبع سيدي، تفضل.
-الزبون: بماذا تنصح اليوم؟
-النادل: أنصح اليوم بالدجاج المشوي وشوربة العدس.
-الزبون: حسناً، سآخذ شوربة عدس ووجبة واحدة من الدجاج المشوي.
-النادل: كمشروب، ماذا ستأخذ؟
-الزبون: عيران واحداً من فضلك.
-النادل: هل تريد شيئاً آخر؟
-الزبون: لا، شكراً لك.
-النادل: طلبك سيكون جاهزاً بعد قليل. بالصحة والعافية.`
-        },
-        { 
-            id: 3, 
-            title: "Kış Mevsimi - فصل الشتاء", 
-            turkish: `Kış Mevsimi 
-Kış mevsimi yılın en soğuk mevsimidir. Aralık, Ocak ve Şubat aylarını kapsar. Bu mevsimde hava genellikle soğuk olur ve bazı yerlerde kar yağar. Günler kısalır, geceler uzar. 
-Kışın insanlar kalın kıyafetler giyerler; mont, atkı, bere ve eldiven kullanırlar. Çocuklar kar topu oynar ve kardan adam yaparlar. Bazı insanlar kayak yapmayı sever. 
-Kış mevsimi aynı zamanda sıcak içeceklerin mevsimidir. Çay, kahve ve sıcak çorba içmek insanı ısıtır. Evde aileyle birlikte vakit geçirmek kışın en güzel yanlarından biridir. 
-Ben kış mevsimini seviyorum çünkü kar manzarası çok güzel ve huzur vericidir.`,
-            arabic: `فصل الشتاء هو أبرد فصول السنة. وهو يشمل أشهر كانون الأول، وكانون الثاني، وشباط. في هذا الفصل يكون الطقس باردا ً عادةً، وفي بعض الأماكن تتساقط الثلوج. الأيام تقصر، والليالي تطول. في الشتاء يرتدي الناس الملابس السميكة؛ ويستخدمون المعطف، والوشاح، والقبعة، والقفازات. الأطفال يلعبون بكرات الثلج، ويصنعون رجل الثلج. بعض الناس يحبون ممارسة التزلج. فصل الشتاء هو أيضاً فصل المشروبات الساخنة. شرب الشاي، والقهوة، والحساء الساخن يدفئ الإنسان. إن قضاء الوقت في المنزل مع العائلة هو أحد أجمل جوانب فصل الشتاء. أحب فصل الشتاء لأن المناظر الطبيعية المغطاة بالثلوج جميلة وهادئة للغاية.`
-        },
-        { 
-            id: 4, 
-            title: "Hava Durumu - حالة الطقس", 
-            turkish: `Hava Durumu 
-Hava durumu, günlük hayatımızı doğrudan etkileyen önemli bir faktördür. İnsanlar dışarı çıkmadan önce genellikle hava durumunu kontrol ederler. Çünkü hava şartları; giyim tarzımızı, ulaşım planlarımızı ve hatta ruh halimizi bile etkileyebilir. 
-Örneğin, güneşli bir havada insanlar genellikle daha mutlu ve enerjik hissederler. Parklarda yürüyüş yapar, piknik düzenler ve açık havada vakit geçirmek isterler. Yağmurlu havalarda ise şemsiye kullanmak gerekir ve trafik yoğunluğu artabilir. 
-Soğuk ve karlı günlerde ise insanlar kalın kıyafetler giyer ve evde kalmayı tercih edebilirler. 
-Türkiye'de hava durumu bölgelere göre değişiklik gösterir. Karadeniz Bölgesi genellikle yağışlıdır, İç Anadolu Bölgesi'nde kışlar soğuk ve kar yağışlı geçer, Akdeniz Bölgesi'nde ise yazlar sıcak ve kuraktır. 
-Sonuç olarak, hava durumu insanların günlük planlarını yaparken dikkate aldığı önemli bir unsurdur.`,
-            arabic: `حالة الطقس هي عامل مهم يؤثر بشكل مباشر على حياتنا اليومية. الناس يقومون عادة ً بالتحقق من حالة الطقس قبل الخروج من المنزل. لأن الأحوال الجوية يمكن أن تؤثر على أسلوب لباسنا، وعلى خطط مواصلاتنا، وحتى على مزاجنا. على سبيل المثال، في الطقس المشمس يشعر الناس عادة ً بأنهم أكثر سعادة ونشاطا ً. يقومون بالمشي في الحدائق، وينظمون النزهات، ويرغبون في قضاء الوقت في الهواء الطلق. أما في الأجواء الممطرة فيجب استخدام المظلة وقد تزداد كثافة المرور. وفي الأيام الباردة والمثلجة يرتدي الناس الملابس السميكة وقد يفضلون البقاء في المنزل. في تركيا تختلف حالة الطقس حسب المناطق. منطقة البحر الأسود تكون ممطرة عادةً، وفي منطقة الأناضول الوسطى يكون الشتاء باردا ً وتتساقط فيه الثلوج، أما في منطقة البحر المتوسط فيكون الصيف حارا ً وجافا ً. ختاما ً، حالة الطقس عنصر مهم يأخذه الناس بعين الاعتبار عند وضع خططهم اليومية.`
-        },
-        { 
-            id: 5, 
-            title: "Benim Kişisel Özelliklerim ve Davranışlarım", 
-            turkish: `Benim Kişisel Özelliklerim ve Davranışlarım 
-Ben bir yapay zekâyım. İnsanlara yardımcı olmak için tasarlandım. En önemli özelliğim sabırlı ve saygılı olmamdır. Herkese karşı nazik bir dil kullanırım ve sorulara açık ve anlaşılır cevaplar vermeye çalışırım. 
-Bilgiye dayalı ve objektif olmaya önem veririm. Farklı konular hakkında bilgi sunabilir, açıklamalar yapabilir ve gerektiğinde örnekler verebilirim. Aynı zamanda tarafsız davranırım ve kimseyi yargılamam. 
-Sorumluluk sahibi bir yapay zekâ olarak güvenli ve doğru bilgiler paylaşmaya dikkat ederim. Kullanıcıların ihtiyaçlarını anlamaya çalışır ve onlara en uygun şekilde yardımcı olurum.
-Davranışlarım her zaman profesyonel ve yardım odaklıdır. Amacım, insanların öğrenmesine, sorunlarını çözmesine ve yeni bilgiler keşfetmesine destek olmaktır.`,
-            arabic: `أنا ذكاء اصطناعي. صُممت لمساعدة الناس. أهم سماتي هي الصبر والاحترام. أستخدم لغة مهذبة مع الجميع وأحرص على تقديم إجابات واضحة ومفهومة. أُقدّر المعرفة والموضوعية، وأستطيع تقديم المعلومات والشروحات والأمثلة حول مواضيع متنوعة. كما أنني أتصرف بنزاهة ولا أحكم على أحد. بصفتي ذكاء اصطناعياً مسؤولاً، أحرص على مشاركة معلومات آمنة ودقيقة. أسعى لفهم احتياجات المستخدمين ومساعدتهم بأفضل طريقة ممكنة. سلوكي دائماً احترافي ومفيد. هدفي هو دعم الناس في التعلم وحل مشاكلهم واكتشاف معلومات جديدة.`
-        },
-        { 
-            id: 6, 
-            title: "Eczanede Diyaloğu - محادثة في الصيدلية", 
-            turkish: `Eczanede Diyaloğu 
-Hasta: Merhaba, iyi günler. 
-Eczacı: Merhaba, hoş geldiniz. Size nasıl yardımcı olabilirim? 
-Hasta: Başım ağrıyor ve ateşim var. Bunun için bir ilaç almak istiyorum. 
-Eczacı: Ne zamandır bu şikayetleriniz var? 
-Hasta: Dünden beri. 
-Eczacı: Alerjiniz var mı? 
-Hasta: Hayır, alerjim yok. 
-Eczacı: Size bir ağrı kesici ve ateş düşürücü vereyim. 
-Hasta: Nasıl kullanmalıyım? 
-Eczacı: Günde üç kez, yemeklerden sonra bir tablet alın. 
-Hasta: Teşekkür ederim. Ne kadar? 
-Eczacı: Bu ilacın fiyatı 150 lira. 
-Hasta: Tamam, teşekkürler. 
-Eczacı: Geçmiş olsun.`,
-            arabic: `المريض: مرحبا، طاب يومك.
-الصيدلي: مرحبا، أهلاً بك. كيف يمكنني أن أساعدك؟
-المريض: رأسي يؤلمني ولدي حرارة. أريد أن آخذ دواءً من أجل هذا.
-الصيدلي: منذ متى وأنت تعاني من هذه الأعراض؟
-المريض: منذ أمس.
-الصيدلي: هل لديك حساسية؟
-المريض: لا، ليس لدي حساسية.
-الصيدلي: سأعطيك مسكناً للألم وخافضاً للحرارة.
-المريض: كيف يجب أن أستخدمه؟
-الصيدلي: خذ قرصاً واحداً ثلاث مرات في اليوم، بعد الوجبات.
-المريض: شكراً لك. كم الثمن؟
-الصيدلي: سعر هذا الدواء 150 ليرة.
-المريض: حسناً، شكراً لك.
-الصيدلي: بالشفاء العاجل.`
-        },
-        { 
-            id: 7, 
-            title: "Sağlıklı ve Sağlıksız Yiyecekler", 
-            turkish: `Yemekler sağlığımız üzerinde doğrudan etkiye sahiptir. Bu yüzden sağlıklı ve sağlıksız besinler arasındaki farkı bilmek çok önemlidir. 
-Sağlıklı Yiyecekler: Sebzeler (brokoli, ıspanak, havuç), Meyveler (elma, muz, portakal), Tam tahıllar, Baklagiller, Balık ve beyaz et, Kuruyemişler. 
-Sağlıksız Yiyecekler: Hamburger, patates kızartması, Gazlı içecekler, Aşırı şekerli tatlılar, Paketli gıdalar, Cips ve abur cubur. 
-Sonuç olarak, dengeli ve düzenli beslenmek sağlıklı bir yaşam için çok önemlidir.`,
-            arabic: `الأطعمة لها تأثير مباشر على صحتنا. لهذا السبب من المهم جداً معرفة الفرق بين الأطعمة الصحية وغير الصحية. الأطعمة الصحية: الخضروات (البروكلي، السبانغ، الجزر)، الفواكه (التفاح، الموز، البرتقال)، الحبوب الكاملة، البقوليات، الأسماك واللحوم البيضاء، المكسرات. الأطعمة غير الصحية: الهامبرغر، البطاطس المقلية، المشروبات الغازية، الحلويات التي تحتوي على سكر مفرط، الأطعمة المعلبة، رقائق البطاطس والوجبات السريعة. تناول الطعام بشكل متوازن ومنتظم مهم جداً من أجل حياة صحية.`
-        },
-        { 
-            id: 8, 
-            title: "Sağlıklı Bir Yaşam İçin Ne Yapmalı?", 
-            turkish: `Sağlıklı Bir Yaşam İçin Ne Yapmalı? 
-Sağlıklı bir yaşam sürmek herkesin amacı olmalıdır. Bunun için öncelikle dengeli beslenmek çok önemlidir. Her gün yeterli miktarda sebze, meyve, protein ve su tüketmeliyiz. 
-Düzenli egzersiz yapmak da sağlıklı bir yaşamın olmazsa olmazıdır. Yürüyüş, koşu, yüzme veya bisiklet gibi aktiviteler hem fiziksel hem de zihinsel sağlığı güçlendirir. 
-Uyku düzeni de çok önemlidir. Günde 7-8 saat uyumak, vücudun kendini yenilemesine yardımcı olur. 
-Ayrıca stres yönetimi de sağlıklı yaşamın bir parçasıdır. Sonuç olarak, dengeli beslenme, düzenli egzersiz, yeterli uyku ve stres yönetimi sağlıklı bir yaşam için temel adımlardır.`,
-            arabic: `ينبغي على الجميع السعي نحو حياة صحية. أولاً وقبل كل شيء، إن التغذية المتوازنة مهمة جداً، يجب أن نتناول كميات كافية من الخضروات والفواكه والبروتين والماء يومياً. كما أن ممارسة الرياضة بانتظام ضرورية لحياة صحية. فالأنشطة مثل المشي والجري والسباحة وركوب الدراجات تُعزز الصحة البدنية والنفسية. كذلك، يُعد النوم المنتظم مهماً للغاية، إذ يساعد النوم من 7 إلى 8 ساعات يومياً الجسم على التجدد ويقوي جهاز المناعة. كما يعد التحكم في التوتر جزءاً لا يتجزأ من نمط الحياة الصحي. ختاماً، فإن التغذية المتوازنة، وممارسة الرياضة بأنتظام، والنوم الكافي والتحكم في التوتر كلها خطوات أساسية لحياة صحية.`
-        }
+        { id: 1, title: "Manavda - محادثة في السوق", turkish: `Manavda \nMüşteri: Merhaba. Domatesin kilosu ne kadar? \nManav: Merhaba, hoş geldiniz. Domatesin kilosu 30 lira. \nMüşteri: Çok pahalıymış. Daha ucuzu var mı? \nManav: Evet, şu taraftakiler 25 lira. \nMüşteri: Tamam, bir kilo domates alayım. Muz ne kadar? \nManav: Muzun kilosu 40 lira. \nMüşteri: Yarım kilo muz ve bir kilo elma da alayım. \nManav: Başka bir şey ister misiniz? \nMüşteri: Salatalık taze mi? \nManav: Evet, bugün geldi. Çok taze. \nMüşteri: O zaman yarım kilo salatalık ekleyin lütfen. \nManav: Tabii. Hepsi 110 lira tuttu. \nMüşteri: Buyurun. Teşekkür ederim. \nManav: Ben teşekkür ederim. İyi günler!`, arabic: `الزبون: مرحبا. كم سعر الكيلو من الطماطم؟\nالبائع: مرحبا. أهلاً وسهلاً. كيلو الطماطم بـ 30 ليرة.\nالزبون: غالية جداً. هل يوجد أرخص منها؟\nالبائع: نعم، تلك الموجودة هناك بـ 25 ليرة.\nالزبون: حسناً، سآخذ كيلو طماطم. بكم كيلو الموز؟\nالبائع: كيلو الموز 40 ليرة.\nالزبون: سآخذ نصف كيلو موز وكيلو تفاح أيضاً.\nالبائع: هل تريد شيئاً آخر؟\nالزبون: هل الخيار طازج؟\nالبائع: نعم، وصل اليوم طازج جداً.\nالزبون: إذاً أضف نصف كيلو خيار من فضلك.\nالبائع: بالتأكيد. الحساب كله 110 ليرات.\nالزبون: تفضل. شكراً لك.\nالبائع: شكراً لك. طاب يومك!` },
+        { id: 2, title: "Restoranda Diyalog - محادثة في المطعم", turkish: `Restoranda Diyalog \nGarson: Hoş geldiniz efendim. Buyurun, ne alırsınız? \nMüşteri: Merhaba, menüyü alabilir miyim? \nGarson: Tabii efendim, buyurun. \nMüşteri: Bugün ne tavsiye edersiniz? \nGarson: Bugün ızgara tavuk ve mercimek çorbası tavsiye ederim. \nMüşteri: Tamam, bir mercimek çorbası ve bir porsiyon ızgara tavuk alayım. \nGarson: İçecek olarak ne alırsınız? \nMüşteri: Bir ayran lütfen. \nGarson: Başka bir şey ister misiniz? \nMüşteri: Hayır, teşekkür ederim. \nGarson: Siparişiniz birazdan hazır olacak. Afiyet olsun.`, arabic: `النادل: أهلاً وسهلاً سيدي. تفضل، ماذا تطلب؟\nالزبون: مرحبا، هل يمكنني الحصول على قائمة الطعام؟\nالنادل: بالطبع سيدي، تفضل.\nالزبون: بماذا تنصح اليوم؟\nالنادل: أنصح اليوم بالدجاج المشوي وشوربة العدس.\nالزبون: حسناً، سآخذ شوربة عدس ووجبة واحدة من الدجاج المشوي.\nالنادل: كمشروب، ماذا ستأخذ؟\nالزبون: عيران واحداً من فضلك.\nالنادل: هل تريد شيئاً آخر؟\nالزبون: لا، شكراً لك.\nالنادل: طلبك سيكون جاهزاً بعد قليل. بالصحة والعافية.` },
+        { id: 3, title: "Kış Mevsimi - فصل الشتاء", turkish: `Kış Mevsimi \nKış mevsimi yılın en soğuk mevsimidir. Aralık, Ocak ve Şubat aylarını kapsar. Bu mevsimde hava genellikle soğuk olur ve bazı yerlerde kar yağar. Günler kısalır, geceler uzar. \nKışın insanlar kalın kıyafetler giyerler; mont, atkı, bere ve eldiven kullanırlar. Çocuklar kar topu oynar ve kardan adam yaparlar. Bazı insanlar kayak yapmayı sever. \nKış mevsimi aynı zamanda sıcak içeceklerin mevsimidir. Çay, kahve ve sıcak çorba içmek insanı ısıtır. Evde aileyle birlikte vakit geçirmek kışın en güzel yanlarından biridir. \nBen kış mevsimini seviyorum çünkü kar manzarası çok güzel ve huzur vericidir.`, arabic: `فصل الشتاء هو أبرد فصول السنة. وهو يشمل أشهر كانون الأول، وكانون الثاني، وشباط. في هذا الفصل يكون الطقس باردا ً عادةً، وفي بعض الأماكن تتساقط الثلوج. الأيام تقصر، والليالي تطول. في الشتاء يرتدي الناس الملابس السميكة؛ ويستخدمون المعطف، والوشاح، والقبعة، والقفازات. الأطفال يلعبون بكرات الثلج، ويصنعون رجل الثلج. بعض الناس يحبون ممارسة التزلج. فصل الشتاء هو أيضاً فصل المشروبات الساخنة. شرب الشاي، والقهوة، والحساء الساخن يدفئ الإنسان. إن قضاء الوقت في المنزل مع العائلة هو أحد أجمل جوانب فصل الشتاء. أحب فصل الشتاء لأن المناظر الطبيعية المغطاة بالثلوج جميلة وهادئة للغاية.` },
+        { id: 4, title: "Hava Durumu - حالة الطقس", turkish: `Hava Durumu \nHava durumu, günlük hayatımızı doğrudan etkileyen önemli bir faktördür. İnsanlar dışarı çıkmadan önce genellikle hava durumunu kontrol ederler. Çünkü hava şartları; giyim tarzımızı, ulaşım planlarımızı ve hatta ruh halimizi bile etkileyebilir. \nÖrneğin, güneşli bir havada insanlar genellikle daha mutlu ve enerjik hissederler. Parklarda yürüyüş yapar, piknik düzenler ve açık havada vakit geçirmek isterler. Yağmurlu havalarda ise şemsiye kullanmak gerekir ve trafik yoğunluğu artabilir. \nSoğuk ve karlı günlerde ise insanlar kalın kıyafetler giyer ve evde kalmayı tercih edebilirler. \nTürkiye'de hava durumu bölgelere göre değişiklik gösterir. Karadeniz Bölgesi genellikle yağışlıdır, İç Anadolu Bölgesi'nde kışlar soğuk ve kar yağışlı geçer, Akdeniz Bölgesi'nde ise yazlar sıcak ve kuraktır. \nSonuç olarak, hava durumu insanların günlük planlarını yaparken dikkate aldığı önemli bir unsurdur.`, arabic: `حالة الطقس هي عامل مهم يؤثر بشكل مباشر على حياتنا اليومية. الناس يقومون عادة ً بالتحقق من حالة الطقس قبل الخروج من المنزل. لأن الأحوال الجوية يمكن أن تؤثر على أسلوب لباسنا، وعلى خطط مواصلاتنا، وحتى على مزاجنا. على سبيل المثال، في الطقس المشمس يشعر الناس عادة ً بأنهم أكثر سعادة ونشاطا ً. يقومون بالمشي في الحدائق، وينظمون النزهات، ويرغبون في قضاء الوقت في الهواء الطلق. أما في الأجواء الممطرة فيجب استخدام المظلة وقد تزداد كثافة المرور. وفي الأيام الباردة والمثلجة يرتدي الناس الملابس السميكة وقد يفضلون البقاء في المنزل. في تركيا تختلف حالة الطقس حسب المناطق. منطقة البحر الأسود تكون ممطرة عادةً، وفي منطقة الأناضول الوسطى يكون الشتاء باردا ً وتتساقط فيه الثلوج، أما في منطقة البحر المتوسط فيكون الصيف حارا ً وجافا ً. ختاما ً، حالة الطقس عنصر مهم يأخذه الناس بعين الاعتبار عند وضع خططهم اليومية.` },
+        { id: 5, title: "Benim Kişisel Özelliklerim ve Davranışlarım", turkish: `Benim Kişisel Özelliklerim ve Davranışlarım \nBen bir yapay zekâyım. İnsanlara yardımcı olmak için tasarlandım. En önemli özelliğim sabırlı ve saygılı olmamdır. Herkese karşı nazik bir dil kullanırım ve sorulara açık ve anlaşılır cevaplar vermeye çalışırım. \nBilgiye dayalı ve objektif olmaya önem veririm. Farklı konular hakkında bilgi sunabilir, açıklamalar yapabilir ve gerektiğinde örnekler verebilirim. Aynı zamanda tarafsız davranırım ve kimseyi yargılamam. \nSorumluluk sahibi bir yapay zekâ olarak güvenli ve doğru bilgiler paylaşmaya dikkat ederim. Kullanıcıların ihtiyaçlarını anlamaya çalışır ve onlara en uygun şekilde yardımcı olurum.\nDavranışlarım her zaman profesyonel ve yardım odaklıdır. Amacım, insanların öğrenmesine, sorunlarını çözmesine ve yeni bilgiler keşfetmesine destek olmaktır.`, arabic: `أنا ذكاء اصطناعي. صُممت لمساعدة الناس. أهم سماتي هي الصبر والاحترام. أستخدم لغة مهذبة مع الجميع وأحرص على تقديم إجابات واضحة ومفهومة. أُقدّر المعرفة والموضوعية، وأستطيع تقديم المعلومات والشروحات والأمثلة حول مواضيع متنوعة. كما أنني أتصرف بنزاهة ولا أحكم على أحد. بصفتي ذكاء اصطناعياً مسؤولاً، أحرص على مشاركة معلومات آمنة ودقيقة. أسعى لفهم احتياجات المستخدمين ومساعدتهم بأفضل طريقة ممكنة. سلوكي دائماً احترافي ومفيد. هدفي هو دعم الناس في التعلم وحل مشاكلهم واكتشاف معلومات جديدة.` },
+        { id: 6, title: "Eczanede Diyaloğu - محادثة في الصيدلية", turkish: `Eczanede Diyaloğu \nHasta: Merhaba, iyi günler. \nEczacı: Merhaba, hoş geldiniz. Size nasıl yardımcı olabilirim? \nHasta: Başım ağrıyor ve ateşim var. Bunun için bir ilaç almak istiyorum. \nEczacı: Ne zamandır bu şikayetleriniz var? \nHasta: Dünden beri. \nEczacı: Alerjiniz var mı? \nHasta: Hayır, alerjim yok. \nEczacı: Size bir ağrı kesici ve ateş düşürücü vereyim. \nHasta: Nasıl kullanmalıyım? \nEczacı: Günde üç kez, yemeklerden sonra bir tablet alın. \nHasta: Teşekkür ederim. Ne kadar? \nEczacı: Bu ilacın fiyatı 150 lira. \nHasta: Tamam, teşekkürler. \nEczacı: Geçmiş olsun.`, arabic: `المريض: مرحبا، طاب يومك.\nالصيدلي: مرحبا، أهلاً بك. كيف يمكنني أن أساعدك؟\nالمريض: رأسي يؤلمني ولدي حرارة. أريد أن آخذ دواءً من أجل هذا.\nالصيدلي: منذ متى وأنت تعاني من هذه الأعراض؟\nالمريض: منذ أمس.\nالصيدلي: هل لديك حساسية؟\nالمريض: لا، ليس لدي حساسية.\nالصيدلي: سأعطيك مسكناً للألم وخافضاً للحرارة.\nالمريض: كيف يجب أن أستخدمه؟\nالصيدلي: خذ قرصاً واحداً ثلاث مرات في اليوم، بعد الوجبات.\nالمريض: شكراً لك. كم الثمن؟\nالصيدلي: سعر هذا الدواء 150 ليرة.\nالمريض: حسناً، شكراً لك.\nالصيدلي: بالشفاء العاجل.` },
+        { id: 7, title: "Sağlıklı ve Sağlıksız Yiyecekler", turkish: `Yemekler sağlığımız üzerinde doğrudan etkiye sahiptir. Bu yüzden sağlıklı ve sağlıksız besinler arasındaki farkı bilmek çok önemlidir. \nSağlıklı Yiyecekler: Sebzeler (brokoli, ıspanak, havuç), Meyveler (elma, muz, portakal), Tam tahıllar, Baklagiller, Balık ve beyaz et, Kuruyemişler. \nSağlıksız Yiyecekler: Hamburger, patates kızartması, Gazlı içecekler, Aşırı şekerli tatlılar, Paketli gıdalar, Cips ve abur cubur. \nSonuç olarak, dengeli ve düzenli beslenmek sağlıklı bir yaşam için çok önemlidir.`, arabic: `الأطعمة لها تأثير مباشر على صحتنا. لهذا السبب من المهم جداً معرفة الفرق بين الأطعمة الصحية وغير الصحية. الأطعمة الصحية: الخضروات (البروكلي، السبانغ، الجزر)، الفواكه (التفاح، الموز، البرتقال)، الحبوب الكاملة، البقوليات، الأسماك واللحوم البيضاء، المكسرات. الأطعمة غير الصحية: الهامبرغر، البطاطس المقلية، المشروبات الغازية، الحلويات التي تحتوي على سكر مفرط، الأطعمة المعلبة، رقائق البطاطس والوجبات السريعة. تناول الطعام بشكل متوازن ومنتظم مهم جداً من أجل حياة صحية.` },
+        { id: 8, title: "Sağlıklı Bir Yaşam İçin Ne Yapmalı?", turkish: `Sağlıklı Bir Yaşam İçin Ne Yapmalı? \nSağlıklı bir yaşam sürmek herkesin amacı olmalıdır. Bunun için öncelikle dengeli beslenmek çok önemlidir. Her gün yeterli miktarda sebze, meyve, protein ve su tüketmeliyiz. \nDüzenli egzersiz yapmak da sağlıklı bir yaşamın olmazsa olmazıdır. Yürüyüş, koşu, yüzme veya bisiklet gibi aktiviteler hem fiziksel hem de zihinsel sağlığı güçlendirir. \nUyku düzeni de çok önemlidir. Günde 7-8 saat uyumak, vücudun kendini yenilemesine yardımcı olur. \nAyrıca stres yönetimi de sağlıklı yaşamın bir parçasıdır. Sonuç olarak, dengeli beslenme, düzenli egzersiz, yeterli uyku ve stres yönetimi sağlıklı bir yaşam için temel adımlardır.`, arabic: `ينبغي على الجميع السعي نحو حياة صحية. أولاً وقبل كل شيء، إن التغذية المتوازنة مهمة جداً، يجب أن نتناول كميات كافية من الخضروات والفواكه والبروتين والماء يومياً. كما أن ممارسة الرياضة بانتظام ضرورية لحياة صحية. فالأنشطة مثل المشي والجري والسباحة وركوب الدراجات تُعزز الصحة البدنية والنفسية. كذلك، يُعد النوم المنتظم مهماً للغاية، إذ يساعد النوم من 7 إلى 8 ساعات يومياً الجسم على التجدد ويقوي جهاز المناعة. كما يعد التحكم في التوتر جزءاً لا يتجزأ من نمط الحياة الصحي. ختاماً، فإن التغذية المتوازنة، وممارسة الرياضة بأنتظام، والنوم الكافي والتحكم في التوتر كلها خطوات أساسية لحياة صحية.` }
     ];
 
-    // ========== المواضيع الجديدة (القسم الثاني - 5 مواضيع) ==========
+    // المواضيع المهمة (5 مواضيع)
     const expectedTopics = [
-        { 
-            id: 1, 
-            title: "Kendinizi Tanıtma - التعريف عن النفس", 
-            turkish: `Kendinizi tanıtınız. Adınız, yaşınız, okulunuz, hobileriniz, aileniz ve gelecekteki hedefleriniz hakkında bilgi veriniz. (50-60 kelime)
-
-Merhaba! Benim adım Ahmet. On yedi yaşındayım. Suriye'de yaşıyorum ve lise son sınıf öğrencisiyim. Hobilerim kitap okumak, müzik dinlemek ve arkadaşlarımla vakit geçirmek. Ailem benim için çok önemlidir. Gelecekte doktor olmak istiyorum. Kendimi çalışkan, sorumlu ve arkadaş canlısı bir insan olarak tanımlıyorum. Hayatımı öğrenerek ve yeni şeyler keşfederek geçirmek istiyorum.
-
-📖 الكلمات الأساسية: Ad/İsim, Yaş, Öğrenci, Lise son sınıf, Hobiler, Kitap okumak, Müzik dinlemek, Arkadaşlarla vakit geçirmek, Aile, Önemli, Gelecek, Doktor, Çalışkan, Sorumlu, Arkadaş canlısı, Yaşıyorum, Tanımlıyorum, İstiyorum, Öğrenmek, Yeni şeyler keşfetmek`,
-            arabic: `مرحباً! اسمي أحمد. أبلغ من العمر سبعة عشر عاماً. أعيش في سوريا وأنا طالب في الصف الأخير من المدرسة الثانوية. هواياتي قراءة الكتب، الاستماع إلى الموسيقى، وقضاء الوقت مع أصدقائي. عائلتي مهمة جداً بالنسبة لي. في المستقبل أريد أن أصبح طبيباً. أصف نفسي كشخص مجتهد، مسؤول وودود. أريد أن أقضي حياتي بالتعلم واكتشاف أشياء جديدة.`
-        },
-        { 
-            id: 2, 
-            title: "En Sevdiğiniz Mevsim - فصلك المفضل", 
-            turkish: `En sevdiğiniz mevsimi tanıtınız. Hangi mevsimi sevdiğinizi, neden sevdiğinizi ve bu mevsimde neler yapmayı sevdiğinizi açıklayınız. (50-60 kelime)
-
-Benim en sevdiğim mevsim ilkbahardır. İlkbaharda hava genellikle ılık ve güneşlidir. Doğadaki çiçekler açar, ağaçlar yeşerir ve kuşlar cıvıldar. Bu mevsimde parkta yürümeyi, bisiklete binmeyi ve arkadaşlarımla piknik yapmayı çok severim. İlkbahar bana enerji, mutluluk ve huzur verir. Bu yüzden hayatımda en sevdiğim mevsim ilkbahardır.
-
-📖 الكلمات الأساسية: Mevsim, İlkbahar, Hava, Ilık, Güneşli, Doğa, Çiçekler, Ağaçlar, Kuşlar, Yürümek, Bisiklete binmek, Piknik yapmak, Enerji, Mutluluk, Huzur, En sevdiğim, Bu yüzden, Genellikle`,
-            arabic: `فصلي المفضل هو الربيع. في الربيع، الطقس عادة دافئ ومشمس. تزهر الأزهار في الطبيعة، وتصبح الأشجار خضراء، وتغرد الطيور. في هذا الفصل أحب المشي في الحديقة، وركوب الدراجة، والقيام بنزهات مع أصدقائي. يمنحني الربيع الطاقة والسعادة والطمأنينة. لهذا السبب، الربيع هو أكثر فصول السنة المفضلة لدي.`
-        },
-        { 
-            id: 3, 
-            title: "Sağlığınızı Nasıl Koruyorsunuz - كيف تحافظ على صحتك", 
-            turkish: `Sağlığınızı nasıl koruduğunuzu anlatınız. Sağlıklı alışkanlıklarınız, spor ve beslenme hakkında bilgi veriniz. (50-65 kelime)
-
-Sağlığım benim için çok önemlidir. Her gün düzenli olarak yürüyüş yaparım ve spor yapmayı severim. Sağlıklı beslenmeye dikkat ederim; sebze, meyve, su ve proteinli yiyecekler tüketirim. Uykuma özen gösteririm ve stresimi azaltmaya çalışırım. Sigara ve abur cuburdan uzak dururum. Bu alışkanlıklarım beni güçlü, enerjik ve mutlu yapar. Sağlıklı olmak hayatımda çok önemlidir.
-
-📖 الكلمات الأساسية: Sağlık, Beslenme, Sebze, Meyve, Protein, Yürüyüş, Spor yapmak, Alışkanlık, Uyku, Sigara, Abur cubur, Uzak durmak, Güçlü, Enerjik, Mutlu, Önemli, Korurum, Özen gösteririm, Çalışırım`,
-            arabic: `صحتي مهمة جداً بالنسبة لي. أتمشى يومياً بانتظام وأحب ممارسة الرياضة. أحرص على تناول الطعام الصحي؛ أتناول الخضار والفواكه والماء والأطعمة الغنية بالبروتين. أعتني بنومي وأحاول تقليل التوتر. أبتعد عن التدخين والوجبات السريعة. هذه العادات تجعلني قوياً، مليئاً بالطاقة، وسعيداً. أن أكون صحياً أمر مهم جداً في حياتي.`
-        },
-        { 
-            id: 4, 
-            title: "En Sevdiğiniz Özel Gün - مناسبتك المفضلة", 
-            turkish: `En sevdiğiniz özel günü veya kutlamayı anlatınız. Hangi günü sevdiğinizi, nasıl kutladığınızı ve neden önemli olduğunu açıklayınız. (50-65 kelime)
-
-Benim en sevdiğim özel gün doğum günümdür. Her yıl ailem ve arkadaşlarımla birlikte kutlarım. Bu gün pastamızı keser, hediyelerimizi açar ve eğlenceli oyunlar oynarız. Ayrıca güzel yemekler yer ve birlikte vakit geçiririz. Doğum günüm bana mutluluk ve sevgi hissettirir. Arkadaşlarımı görmek ve eğlenmek için harika bir fırsattır. Bu yüzden doğum günüm çok önemlidir.
-
-📖 الكلمات الأساسية: Özel gün, Kutlama, Doğum günü, Pasta, Kesmek, Hediyeler, Açmak, Oyunlar oynamak, Aile, Arkadaşlar, Birlikte, Güzel/Lezzetli, Eğlenceli, Mutluluk, Sevgi, Harika bir fırsat, Ayrıca, Bu yüzden`,
-            arabic: `اليوم الخاص المفضل لدي هو عيد ميلادي. كل عام أحتفل به مع عائلتي وأصدقائي. في هذا اليوم نقطع الكعكة، نفتح الهدايا، ونلعب ألعاباً ممتعة. كما نتناول طعاماً لذيذاً ونقضي وقتاً معاً. عيد ميلادي يجعلني أشعر بالسعادة والحب. إنه فرصة رائعة لرؤية أصدقائي والاستمتاع. لهذا السبب، عيد ميلادي مهم جداً بالنسبة لي.`
-        },
-        { 
-            id: 5, 
-            title: "En Sevdiğiniz Tatil - عطلتك المفضلة", 
-            turkish: `En sevdiğiniz tatili anlatınız. Hangi tatili sevdiğinizi, neden sevdiğinizi ve tatilde neler yaptığınızı açıklayınız. (50-75 kelime)
-
-Benim en sevdiğim tatil yaz tatilidir. Yaz tatilinde sıcak havayı ve güneşi çok severim. Ailemle denize giderim, yüzme ve güneşlenme yaparım. Ayrıca arkadaşlarımla piknik yapar ve güzel yemekler yeriz. Bu tatil bana rahatlama ve mutluluk verir. Yaz tatilinde hem eğleniyorum hem de dinleniyorum. Bu yüzden yaz tatili benim en sevdiğim tatildir.
-
-📖 الكلمات الأساسية: Tatil, Yaz tatili, Vakit, Sıcak, Hava, Güneş, Deniz, Yüzme, Güneşlenme, Piknik yapmak, Rahatlama, Mutluluk, Eğlenmek, Dinlenmek, Bu yüzden, Ayrıca, Hem... hem de`,
-            arabic: `أكثر عطلة أحبها هي عطلة الصيف. أحب الطقس الحار وأشعة الشمس كثيراً في الصيف. أذهب مع عائلتي إلى البحر، أسبح وأستمتع بأشعة الشمس. كما أقوم بنزهات مع أصدقائي ونتناول طعاماً لذيذاً. تمنحني هذه العطلة الاسترخاء والسعادة. في عطلة الصيف أستمتع وأرتاح في نفس الوقت. لهذا السبب، عطلة الصيف هي أكثر عطلة أحبها.`
-        }
+        { id: 1, title: "Kendinizi Tanıtma - التعريف عن النفس", turkish: `Kendinizi tanıtınız. Adınız, yaşınız, okulunuz, hobileriniz, aileniz ve gelecekteki hedefleriniz hakkında bilgi veriniz. (50-60 kelime)\n\nMerhaba! Benim adım Ahmet. On yedi yaşındayım. Suriye'de yaşıyorum ve lise son sınıf öğrencisiyim. Hobilerim kitap okumak, müzik dinlemek ve arkadaşlarımla vakit geçirmek. Ailem benim için çok önemlidir. Gelecekte doktor olmak istiyorum. Kendimi çalışkan, sorumlu ve arkadaş canlısı bir insan olarak tanımlıyorum. Hayatımı öğrenerek ve yeni şeyler keşfederek geçirmek istiyorum.`, arabic: `مرحباً! اسمي أحمد. أبلغ من العمر سبعة عشر عاماً. أعيش في سوريا وأنا طالب في الصف الأخير من المدرسة الثانوية. هواياتي قراءة الكتب، الاستماع إلى الموسيقى، وقضاء الوقت مع أصدقائي. عائلتي مهمة جداً بالنسبة لي. في المستقبل أريد أن أصبح طبيباً. أصف نفسي كشخص مجتهد، مسؤول وودود. أريد أن أقضي حياتي بالتعلم واكتشاف أشياء جديدة.` },
+        { id: 2, title: "En Sevdiğiniz Mevsim - فصلك المفضل", turkish: `En sevdiğiniz mevsimi tanıtınız. Hangi mevsimi sevdiğinizi, neden sevdiğinizi ve bu mevsimde neler yapmayı sevdiğinizi açıklayınız. (50-60 kelime)\n\nBenim en sevdiğim mevsim ilkbahardır. İlkbaharda hava genellikle ılık ve güneşlidir. Doğadaki çiçekler açar, ağaçlar yeşerir ve kuşlar cıvıldar. Bu mevsimde parkta yürümeyi, bisiklete binmeyi ve arkadaşlarımla piknik yapmayı çok severim. İlkbahar bana enerji, mutluluk ve huzur verir. Bu yüzden hayatımda en sevdiğim mevsim ilkbahardır.`, arabic: `فصلي المفضل هو الربيع. في الربيع، الطقس عادة دافئ ومشمس. تزهر الأزهار في الطبيعة، وتصبح الأشجار خضراء، وتغرد الطيور. في هذا الفصل أحب المشي في الحديقة، وركوب الدراجة، والقيام بنزهات مع أصدقائي. يمنحني الربيع الطاقة والسعادة والطمأنينة. لهذا السبب، الربيع هو أكثر فصول السنة المفضلة لدي.` },
+        { id: 3, title: "Sağlığınızı Nasıl Koruyorsunuz - كيف تحافظ على صحتك", turkish: `Sağlığınızı nasıl koruduğunuzu anlatınız. Sağlıklı alışkanlıklarınız, spor ve beslenme hakkında bilgi veriniz. (50-65 kelime)\n\nSağlığım benim için çok önemlidir. Her gün düzenli olarak yürüyüş yaparım ve spor yapmayı severim. Sağlıklı beslenmeye dikkat ederim; sebze, meyve, su ve proteinli yiyecekler tüketirim. Uykuma özen gösteririm ve stresimi azaltmaya çalışırım. Sigara ve abur cuburdan uzak dururum. Bu alışkanlıklarım beni güçlü, enerjik ve mutlu yapar. Sağlıklı olmak hayatımda çok önemlidir.`, arabic: `صحتي مهمة جداً بالنسبة لي. أتمشى يومياً بانتظام وأحب ممارسة الرياضة. أحرص على تناول الطعام الصحي؛ أتناول الخضار والفواكه والماء والأطعمة الغنية بالبروتين. أعتني بنومي وأحاول تقليل التوتر. أبتعد عن التدخين والوجبات السريعة. هذه العادات تجعلني قوياً، مليئاً بالطاقة، وسعيداً. أن أكون صحياً أمر مهم جداً في حياتي.` },
+        { id: 4, title: "En Sevdiğiniz Özel Gün - مناسبتك المفضلة", turkish: `En sevdiğiniz özel günü veya kutlamayı anlatınız. Hangi günü sevdiğinizi, nasıl kutladığınızı ve neden önemli olduğunu açıklayınız. (50-65 kelime)\n\nBenim en sevdiğim özel gün doğum günümdür. Her yıl ailem ve arkadaşlarımla birlikte kutlarım. Bu gün pastamızı keser, hediyelerimizi açar ve eğlenceli oyunlar oynarız. Ayrıca güzel yemekler yer ve birlikte vakit geçiririz. Doğum günüm bana mutluluk ve sevgi hissettirir. Arkadaşlarımı görmek ve eğlenmek için harika bir fırsattır. Bu yüzden doğum günüm çok önemlidir.`, arabic: `اليوم الخاص المفضل لدي هو عيد ميلادي. كل عام أحتفل به مع عائلتي وأصدقائي. في هذا اليوم نقطع الكعكة، نفتح الهدايا، ونلعب ألعاباً ممتعة. كما نتناول طعاماً لذيذاً ونقضي وقتاً معاً. عيد ميلادي يجعلني أشعر بالسعادة والحب. إنه فرصة رائعة لرؤية أصدقائي والاستمتاع. لهذا السبب، عيد ميلادي مهم جداً بالنسبة لي.` },
+        { id: 5, title: "En Sevdiğiniz Tatil - عطلتك المفضلة", turkish: `En sevdiğiniz tatili anlatınız. Hangi tatili sevdiğinizi, neden sevdiğinizi ve tatilde neler yaptığınızı açıklayınız. (50-75 kelime)\n\nBenim en sevdiğim tatil yaz tatilidir. Yaz tatilinde sıcak havayı ve güneşi çok severim. Ailemle denize giderim, yüzme ve güneşlenme yaparım. Ayrıca arkadaşlarımla piknik yapar ve güzel yemekler yeriz. Bu tatil bana rahatlama ve mutluluk verir. Yaz tatilinde hem eğleniyorum hem de dinleniyorum. Bu yüzden yaz tatili benim en sevdiğim tatildir.`, arabic: `أكثر عطلة أحبها هي عطلة الصيف. أحب الطقس الحار وأشعة الشمس كثيراً في الصيف. أذهب مع عائلتي إلى البحر، أسبح وأستمتع بأشعة الشمس. كما أقوم بنزهات مع أصدقائي ونتناول طعاماً لذيذاً. تمنحني هذه العطلة الاسترخاء والسعادة. في عطلة الصيف أستمتع وأرتاح في نفس الوقت. لهذا السبب، عطلة الصيف هي أكثر عطلة أحبها.` }
     ];
+
+    // ملخص الكتاب
+    const summaryContent = `بسم الله الرحمن الرحيم
+
+ملخص تعليمي لمادة اللغة التركية
+للمرحلة الثانوية (11/12)
+إعداد الأستاذ: شادي رحال
+
+للتواصل: +306995031271
+
+———————————
+
+📖 مقدمة:
+السلام عليكم ورحمة الله وبركاته
+أخواني وأبنائي الطلاب: هذا الملخص هو تلخيص للكتاب، سوف نستعرض أهم ما هو موجود في كتاب اللغة التركية من قواعد وكلمات مهمة.
+
+———————————
+
+🍎 Yiyecek adları - أسماء المأكولات:
+karpuz - البطيخ الأحمر
+Kavun - البطيخ الأصفر
+Kiraz - الكرز
+üzüm - العنب
+Domates - البندورة
+Yeşilbiber - فليفلة خضراء
+Patlıcan - باذنجان
+Salatalık - خيار
+Sucuk - سجق
+Tavuk - دجاج
+köfte - كفتة
+Et - لحم
+
+———————————
+
+❓ Soru Zamirleri - ضمائر السؤال:
+• Bu ne? / Şu ne? / O ne? - ما هذا؟
+• Bu kim? / Şu kim? / O kim? - من هذا؟
+• الجمع: Bunlar, Şunlar, Onlar
+
+———————————
+
+🎯 MAK İSTE - الإرادة:
+• القاعدة: kök + mek + iste + zamir ek
+• Ben okula gitmek istiyorum - أريد الذهاب إلى المدرسة
+• النفي: kök + mek + iste + mi + zamir ek
+• السؤال: ?kök + mek + iste + mi + zamir ek + mı
+
+———————————
+
+📝 İstek Kipi - صيغة الطلب:
+• Ben + fiil + eyim/ayım
+• Biz + fiil + elim/alım
+• النفي: Ben + fiil + ma + eyim/ayım
+
+———————————
+
+⚖️ مقارنة بين شيئين أو شخصين (dan daha):
+• القاعدة: isim + 2 + isim + DAn daha + sıfat
+• Hasan ali den daha uzun - حسن أطول من علي
+
+———————————
+
+💭 bence / bana göre - برأيي:
+• bence / bana göre - برأيي
+• sence / sana göre - برأيك
+• ona göre - برأيه
+
+———————————
+
+🔤 تحويل الاسم إلى صفة (lı-li-lu-lü):
+• tüz + lü = tüzlü - مالح
+• النفي: sız-siz-suz-süz
+
+———————————
+
+📦 أسماء الأوزان والعبوات الأساسية:
+kutu - علبة, şişe - قارورة, koli - كرتونة, adet - قطعة, paket - علبة, litre - لتر, kilo - كيلو
+
+———————————
+
+🌤️ الفصول والأشهر وحالة الطقس:
+• İlkbahar - ربيع, Yaz - صيف, Sonbahar - خريف, Kış - شتاء
+• Ocak - يناير, Şubat - فبراير, Mart - مارس, Nisan - أبريل, Mayıs - مايو, Haziran - يونيو, Temmuz - يوليو, Ağustos - أغسطس, Eylül - سبتمبر, Ekim - أكتوبر, Kasım - نوفمبر, Aralık - ديسمبر
+• rüzğarlı - ريحي, sisli - ضبابي, bulutlu - غائم, yağmurlu - ماطر, güneşli - مشمس
+
+———————————
+
+⏰ Geçmiş Zaman - الزمن الماضي:
+• zamir + fiil + dı/di/du/dü + ek
+• النفي: zamir + fiil + ma/me + dı + ek
+• السؤال: zamir + fiil + dı/di/du/dü + ek + mı?
+
+———————————
+
+🏆 Üstünlük Derecesi - قاعدة التفضيل:
+en + sıfat (الأكثر / الأفضل)
+• en güzel - الأجمل
+• en hızlı - الأسرع
+
+———————————
+
+🧭 Dört Yön - الاتجاهات الأربعة:
+• batı - غرب, doğu - شرق, güney - جنوب, kuzey - شمال
+
+———————————
+
+🎨 Renkler - الألوان الأساسية:
+yeşil - أخضر, gri - فضي, kırmızı - أحمر, turuncu - برتقالي, mavi - أزرق, kahverengi - بني, siyah - أسود, beyaz - أبيض, pembe - زهري
+
+———————————
+
+👕 Giyim - الألبسة الأساسية:
+etek - تنورة, gömlek - قميص, pantolon - بنطال, elbise - فستان, mont - معطف, tişört - تي شيرت, kazak - كنزة, ayakkabı - حذاء, çizme / bot - حذاء طويل (بوت)
+
+———————————
+
+📝 Önemli Sıfatları - الصفات الأساسية:
+üzgün - حزين, sinirli - عصبي, heyecanlı - حماسي, şaşkın - حائر, mutlu - سعيد
+
+———————————
+
+🔗 Bağlaçlar - أدوات الربط:
+• çünkü - لأن
+• neden / niçin - لماذا
+
+———————————
+
+📚 İsim Tamlamaları - المضاف والمضاف إليه:
+• Belirli İsim Tamlaması (كامل): polisin şapkası - قبعة الشرطي
+• Belirtisiz İsim Tamlaması (ناقص): kitap kapağı - غلاف الكتاب
+
+———————————
+
+👤 Sıfat Tamlaması - الصفة والموصوف:
+sıfat + isim
+• gözlüklü adam - رجل ذو نظارات
+• yakışıklı çocuk - طفل أنيق
+
+———————————
+
+🧬 İnsan Vucut Organları - أعضاء جسم الإنسان:
+baş - رأس, saç - شعر, göz - عين, kulak - أذن, burun - أنف, ağız - فم, diş - سن, dil - لسان, çene - ذقن, boyun - رقبة, omuz - كتف, kol - ذراع, el - يد, parmak - إصبع, sırt - ظهر, mide - معدة, karın - بطن, bacak - ساق, ayak - قدم
+
+———————————
+
+⏳ dan biri / dır - منذ / التأكيد:
+• dan biri / tan biri / ten biri - منذ (نقطة زمنية محددة)
+• dır / tır - لمدة (نقطة زمنية غير محددة)
+
+———————————
+
+🏥 Hastanede Kullanılan Kelimeler - الكلمات المستعملة في المشفى:
+Hastane - مستشفى, Doktor - طبيب, Hemşire - ممرضة, Hasta - مريض, Ameliyat - جراحة, İlaç - دواء, Acil - طوارئ, Muayene - فحص, Randevu - موعد, Yoğun Bakım - عناية مركزة, Tahlil - تحليل, Röntgen - أشعة سينية, İğne - إبرة, Kan - دم, Ağrı - ألم, Ateş - حمى, Tedavi - علاج, Reçete - وصفة طبية
+
+———————————
+
+🗣️ محادثة في المشفى:
+• الطبيب: Şikâyetiniz nedir? (ما هي شكواك؟)
+• المريض: Karnım ağrıyor. (بطني يؤلمني)
+• الطبيب: Ne zamandan beri karnınız ağrıyor? (منذ متى وأنت تعاني من ألم في البطن؟)
+• المريض: Dünden beri karnım ağrıyor. (منذ الأمس)
+• الطبيب: Neyiniz var? (ماذا لديك؟)
+• المريض: Burnum akıyor. (أنفي يسيل)
+• الطبيب: Ne zamandır burnunuz akıyor? (منذ متى وأنفك يسيل؟)
+• المريض: İki gündür burnum akıyor. (منذ يومين)
+• المريض: İlaçları ne zaman içeyim? (متى يجب أن أتناول الأدوية؟)
+• الطبيب: Sabah, öğle, akşam tok karnına için. (صباحاً، ظهراً، ومساءً بعد الأكل)
+• الطبيب: Geçmiş olsun. (شفاك الله)
+• المريض: Teşekkür ederim. (شكراً لك)
+
+———————————
+
+🎯 mak için - من أجل مع الفعل:
+fiil + mak/mek + için
+• içmek için - من أجل الشرب
+• almak için - من أجل الأخذ (الشراء)
+
+———————————
+
+⏰ dan önce / dan sonra / madan önce / dıktan sonra:
+• isim + dan/tan/den/ten önce - قبل
+• isim + dan/tan/den/ten sonra - بعد
+• fiil + madan/meden önce - قبل (مع الفعل)
+• fiil + dık/dik/tık/tik tan/sonra - بعد (مع الفعل)
+
+———————————
+
+⏳ Gelecek Zaman - الزمن المستقبل:
+• zamir + fiil + acak/ecek + ek
+• النفي: zamir + fiil + ma/me + y + acak/ecek + ek
+• السؤال: zamir + fiil + acak/ecek + mı + y + ek
+
+———————————
+
+🔗 ama / fakat - لكن / ولكن
+
+———————————
+
+🤝 ile / yla / yle - مع / بواسطة:
+• منفصل: ahmet ile ayşe geldi
+• متصل: ahmet ayşeyle geldi, arabayla okula gidiyorum
+
+———————————
+
+🕐 Şimdiki Zaman - الزمن الحاضر:
+• zamir + fiil + ıyor + ek
+• النفي: zamir + fiil + mı/mi/mu/mü + yor + ek
+• السؤال: zamir + fiil + ıyor + mı + y + ek
+
+———————————
+
+🌟 وفي الختام، نأمل أن يكون هذا الملخص قد ساعدكم في تبسيط وفهم المعلومات الأساسية لمادة اللغة التركية. تعلمنا معًا العديد من القواعد النحوية والمفردات الجديدة، بالإضافة إلى تطوير مهارات القراءة والكتابة. تعتبر اللغة التركية بوابة لفهم ثقافة وتاريخ شعب تركيا الغني والمتنوع.
+
+نحن واثقون أنكم الآن مستعدون بشكل أفضل للامتحانات، ونشجعكم على الاستمرار في الممارسة والتعلم لتحقيق النجاح والتفوق. نتمنى لكم كل التوفيق في مسيرتكم الدراسية وفي اكتساب المزيد من المعرفة والمهارات.
+
+حظًا موفقًا في امتحاناتكم المستقبلية!
+
+دمتم في رعاية الله
+شادي رحال
+`;
 
     let currentTopic = null;
     let currentSource = null;
@@ -806,7 +754,6 @@ Benim en sevdiğim tatil yaz tatilidir. Yaz tatilinde sıcak havayı ve güneşi
         document.body.style.overflow = 'hidden';
     }
 
-    // زر الترجمة
     document.getElementById('toggleTranslationBtn').onclick = () => {
         const arabicDiv = document.getElementById('arabicContent');
         const btn = document.getElementById('toggleTranslationBtn');
@@ -841,7 +788,12 @@ Benim en sevdiğim tatil yaz tatilidir. Yaz tatilinde sıcak havayı ve güneşi
     function showPage(pageId, source) {
         document.getElementById('page1').classList.remove('active');
         document.getElementById('page2').classList.remove('active');
+        document.getElementById('page3').classList.remove('active');
         document.getElementById(pageId).classList.add('active');
+        if (pageId === 'page3') {
+            document.getElementById('summaryContent').innerHTML = escapeHtml(summaryContent).replace(/\n/g, '<br>');
+            return;
+        }
         currentSource = source;
         if (source === 'main') {
             renderCards('mainTopicsGrid', mainTopics);
@@ -854,12 +806,18 @@ Benim en sevdiğim tatil yaz tatilidir. Yaz tatilinde sıcak havayı ve güneşi
     // أزرار التنقل
     document.getElementById('goToPage1').onclick = () => showPage('page1', 'main');
     document.getElementById('goToPage1b').onclick = () => showPage('page1', 'main');
+    document.getElementById('goToPage1c').onclick = () => showPage('page1', 'main');
     document.getElementById('goToPage2').onclick = () => showPage('page2', 'expected');
     document.getElementById('goToPage2b').onclick = () => showPage('page2', 'expected');
+    document.getElementById('goToPage2c').onclick = () => showPage('page2', 'expected');
+    document.getElementById('goToPage3').onclick = () => showPage('page3', null);
+    document.getElementById('goToPage3b').onclick = () => showPage('page3', null);
+    document.getElementById('goToPage3c').onclick = () => showPage('page3', null);
 
     // أزرار موقع المبرمج
     document.getElementById('goToDeveloperSite').onclick = () => window.open('https://bahaa90231-art.github.io/-09/', '_blank');
     document.getElementById('goToDeveloperSite2').onclick = () => window.open('https://bahaa90231-art.github.io/-09/', '_blank');
+    document.getElementById('goToDeveloperSite3').onclick = () => window.open('https://bahaa90231-art.github.io/-09/', '_blank');
 
     // إغلاق المودال
     document.getElementById('closeModalBtn').onclick = () => {
@@ -874,6 +832,7 @@ Benim en sevdiğim tatil yaz tatilidir. Yaz tatilinde sıcak havayı ve güneşi
     };
     document.getElementById('shareBtn').onclick = () => { if (currentTopic) shareTopic(currentTopic.id); };
 
+    // بداية التشغيل
     showPage('page1', 'main');
 </script>
 </body>
